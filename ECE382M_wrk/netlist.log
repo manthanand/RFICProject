@@ -1,0 +1,60 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE6420_lib:Testbench:schematic"
+V_Source:SRC1  N__17 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC2  N__19 0 Type="V_1Tone" V[1]=polar(1.2,180) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+C:C4  N__19 LO_In C=1 nF 
+C:C3  N__17 LO_Ip C=1 nF 
+
+RFfreq=5
+IFfreq=0.05
+df=0.01
+LOfreq=RFfreq-IFfreq
+RFpower=-50
+Port:PORT1  N__12 0 Num=1 Z=50 P[1]=dbmtow(RFpower) Freq[1]=RFfreq GHz    Noise=yes 
+aele CG_linear=mag(mix(HB.Vout,{1,-1})/mix(HB.vin,{0,1}));CG_linear_p=mag(mix(HB.Vout2,{1,-1})/mix(HB.vin,{0,1}));CG_linear_n=mag(mix(HB.Vout1,{1,-1})/mix(HB.vin,{0,1}));CG_dB=20*log(CG_linear);CG_dB_p=20*log(CG_linear_p);CG_dB_n=20*log(CG_linear_n);
+#uselib "ckt" , "Balun3Port"
+Balun3Port:CMP1  Vout Vout1 Vout2 
+HB:HB4 MaxOrder=5 Freq[1]=LOfreq GHz Freq[2]=RFfreq GHz Order[1]=11 Order[2]=3 StatusLevel=4 FundOversample=1 \
+Restart=no UseAllSS_Freqs=yes OutputBudgetIV=no InputFreq=RFfreq GHz FreqForNoise=IFfreq GHz NoiseInputPort=1 NoiseOutputPort=2 PhaseNoise=no SortNoise=1 NoiseThresh=15 BandwidthForNoise=1.0 Hz \
+SweepVar="IFfreq" SweepPlan="HB4_stim" OutputPlan="HB4_Output" UseKrylov=yes 
+
+SweepPlan: HB4_stim Start=0 Stop=0.1 Lin=11 
+
+OutputPlan:HB4_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      SavedEquationName[1]="IFfreq" \
+      SavedEquationName[2]="LOfreq" \
+      SavedEquationName[3]="Rload" \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
+Tran:HB4_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
+Freq[1]=LOfreq GHz Order[1]=11 \
+OutputPlan="HB4_Output"
+
+Component:tahb_HB4 Module="ATAHB" Type="ModelExtractor" \ 
+ Tran_Analysis="HB4_tran" HB_Analysis="HB4" 
+
+Port:Term2  Vout 0 Num=2 Z=100 kOhm Noise=yes 
+Short:DC_Block2  N__12 vin Mode=1 
+V_Source:SRC3  N__26 0 Type="V_DC" Vdc=2.5 V SaveCurrent=1 
+V_Source:SRC6  N__27 0 Type="V_1Tone" V[1]=polar(1.2,90) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+C:C5  N__27 LO_Qp C=1 nF 
+C:C6  N__30 LO_Qn C=1 nF 
+V_Source:SRC5  N__30 0 Type="V_1Tone" V[1]=polar(1.2,270) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+Port:Term3  VoutQ 0 Num=3 Z=100 kOhm Noise=yes 
+#uselib "ckt" , "Balun3Port"
+Balun3Port:CMP2  VoutQ N__15 N__16 
