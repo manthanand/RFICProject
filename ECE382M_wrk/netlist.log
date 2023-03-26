@@ -1,60 +1,26 @@
+; Top Design: "ECE382M:LNA:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE6420_lib:Testbench:schematic"
-V_Source:SRC1  N__17 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
-V_Source:SRC2  N__19 0 Type="V_1Tone" V[1]=polar(1.2,180) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
-C:C4  N__19 LO_In C=1 nF 
-C:C3  N__17 LO_Ip C=1 nF 
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE382M:LNA:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+#ifndef inc_ECE382M_3aLNA_3aschematic__130nm__bulk_2enet
+#define inc_ECE382M_3aLNA_3aschematic__130nm__bulk_2enet 1
+#include "C:\Users\manth\Documents\RFIC Project\ECE382M_wrk\130nm_bulk.net"
+#endif
+"nmos":MOSFET1  Voutp Voutp Vin Vin Length=130 nm Width=1 um Mode=1 Noise=yes _M=19 
+aele gm=GM.MOSFET3;
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L1  Vdd Voutp L=1.0 nH Q=15 F=5 GHz tune{ 2.4 GHz to 5 GHz by 0.5 GHz } Mode=1 Rdc=0.0 Ohm 
+CAPQ:C1  Voutp Vdd C=1.0 pF Q=50 F=100.0 MHz Mode=1 
+R:R1  Vdd Voutp R=50 Ohm Noise=yes 
+#uselib "ckt" , "INDQ_Z"
+INDQ_Z:L2  Vin 0 L=1.0 nH Q=15 F=5 GHz tune{ 2.4 GHz to 5 GHz by 0.5 GHz } Mode=1 Rdc=0.0 Ohm 
+"nmos":MOSFET3  N__16 N__14 0 0 Length=130 nm Width=1 um Mode=1 Noise=yes _M=19 
+V_Source:SRC3  N__14 0 Type="V_DC" Vdc=vgs V SaveCurrent=1 
 
-RFfreq=5
-IFfreq=0.05
-df=0.01
-LOfreq=RFfreq-IFfreq
-RFpower=-50
-Port:PORT1  N__12 0 Num=1 Z=50 P[1]=dbmtow(RFpower) Freq[1]=RFfreq GHz    Noise=yes 
-aele CG_linear=mag(mix(HB.Vout,{1,-1})/mix(HB.vin,{0,1}));CG_linear_p=mag(mix(HB.Vout2,{1,-1})/mix(HB.vin,{0,1}));CG_linear_n=mag(mix(HB.Vout1,{1,-1})/mix(HB.vin,{0,1}));CG_dB=20*log(CG_linear);CG_dB_p=20*log(CG_linear_p);CG_dB_n=20*log(CG_linear_n);
-#uselib "ckt" , "Balun3Port"
-Balun3Port:CMP1  Vout Vout1 Vout2 
-HB:HB4 MaxOrder=5 Freq[1]=LOfreq GHz Freq[2]=RFfreq GHz Order[1]=11 Order[2]=3 StatusLevel=4 FundOversample=1 \
-Restart=no UseAllSS_Freqs=yes OutputBudgetIV=no InputFreq=RFfreq GHz FreqForNoise=IFfreq GHz NoiseInputPort=1 NoiseOutputPort=2 PhaseNoise=no SortNoise=1 NoiseThresh=15 BandwidthForNoise=1.0 Hz \
-SweepVar="IFfreq" SweepPlan="HB4_stim" OutputPlan="HB4_Output" UseKrylov=yes 
+vgs=.332
+ParamSweep:Sweep1 StatusLevel=2 SweepVar="vgs" SweepPlan="Sweep1_stim" 
 
-SweepPlan: HB4_stim Start=0 Stop=0.1 Lin=11 
+SweepPlan: Sweep1_stim Start=.34 Stop=2.5 Step=.01 
 
-OutputPlan:HB4_Output \
-      Type="Output" \
-      UseNodeNestLevel=yes \
-      NodeNestLevel=2 \
-      UseEquationNestLevel=yes \
-      EquationNestLevel=2 \
-      UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2 \
-      SavedEquationName[1]="IFfreq" \
-      SavedEquationName[2]="LOfreq" \
-      SavedEquationName[3]="Rload" \
-      UseDeviceCurrentNestLevel=no \
-      DeviceCurrentNestLevel=0 \
-      DeviceCurrentDeviceType="All" \
-      DeviceCurrentSymSyntax=yes \
-      UseCurrentNestLevel=yes \
-      CurrentNestLevel=999 \
-      UseDeviceVoltageNestLevel=no \
-      DeviceVoltageNestLevel=0 \
-      DeviceVoltageDeviceType="All"
-
-Tran:HB4_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
-Freq[1]=LOfreq GHz Order[1]=11 \
-OutputPlan="HB4_Output"
-
-Component:tahb_HB4 Module="ATAHB" Type="ModelExtractor" \ 
- Tran_Analysis="HB4_tran" HB_Analysis="HB4" 
-
-Port:Term2  Vout 0 Num=2 Z=100 kOhm Noise=yes 
-Short:DC_Block2  N__12 vin Mode=1 
-V_Source:SRC3  N__26 0 Type="V_DC" Vdc=2.5 V SaveCurrent=1 
-V_Source:SRC6  N__27 0 Type="V_1Tone" V[1]=polar(1.2,90) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
-C:C5  N__27 LO_Qp C=1 nF 
-C:C6  N__30 LO_Qn C=1 nF 
-V_Source:SRC5  N__30 0 Type="V_1Tone" V[1]=polar(1.2,270) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
-Port:Term3  VoutQ 0 Num=3 Z=100 kOhm Noise=yes 
-#uselib "ckt" , "Balun3Port"
-Balun3Port:CMP2  VoutQ N__15 N__16 
+Short:I_Probe1  Vdd N__16 Mode=0 SaveCurrent=yes 
+Short:PinShort__Voutp  Voutp__Voutp Voutp Mode=0 SaveCurrent=no
