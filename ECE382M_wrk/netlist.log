@@ -1,26 +1,46 @@
-; Top Design: "ECE382M:LNA:schematic"
+; Top Design: "ECE382M:LNA_wrk:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE382M:LNA:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
-#ifndef inc_ECE382M_3aLNA_3aschematic__130nm__bulk_2enet
-#define inc_ECE382M_3aLNA_3aschematic__130nm__bulk_2enet 1
-#include "C:\Users\manth\Documents\RFIC Project\ECE382M_wrk\130nm_bulk.net"
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE382M:LNA_wrk:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+#ifndef inc_ECE382M_3aLNA__wrk_3aschematic__130nm__bulk_2enet
+#define inc_ECE382M_3aLNA__wrk_3aschematic__130nm__bulk_2enet 1
+#include "C:\Users\manth\Github\RFICProject\ECE382M_wrk\130nm_bulk.net"
 #endif
 "nmos":MOSFET1  Voutp Voutp Vin Vin Length=130 nm Width=1 um Mode=1 Noise=yes _M=19 
-aele gm=GM.MOSFET3;
+Short:I_Probe1  Vdd N__16 Mode=0 SaveCurrent=yes 
 #uselib "ckt" , "INDQ_Z"
 INDQ_Z:L1  Vdd Voutp L=1.0 nH Q=15 F=5 GHz tune{ 2.4 GHz to 5 GHz by 0.5 GHz } Mode=1 Rdc=0.0 Ohm 
+aele gm=MOSFET3.GM;
 CAPQ:C1  Voutp Vdd C=1.0 pF Q=50 F=100.0 MHz Mode=1 
 R:R1  Vdd Voutp R=50 Ohm Noise=yes 
 #uselib "ckt" , "INDQ_Z"
 INDQ_Z:L2  Vin 0 L=1.0 nH Q=15 F=5 GHz tune{ 2.4 GHz to 5 GHz by 0.5 GHz } Mode=1 Rdc=0.0 Ohm 
-"nmos":MOSFET3  N__16 N__14 0 0 Length=130 nm Width=1 um Mode=1 Noise=yes _M=19 
-V_Source:SRC3  N__14 0 Type="V_DC" Vdc=vgs V SaveCurrent=1 
+"nmos":MOSFET3  N__16 Voutn 0 0 Length=130 nm Width=1 um Mode=1 Noise=yes _M=19 
+V_Source:SRC3  Voutn 0 Type="V_DC" Vdc=vgs V SaveCurrent=1 
 
 vgs=.332
-ParamSweep:Sweep1 StatusLevel=2 SweepVar="vgs" SweepPlan="Sweep1_stim" 
+Vov=vgs-.332
+gmId=gm/I_Probe1.i
+DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
+SweepVar="vgs" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
 
-SweepPlan: Sweep1_stim Start=.34 Stop=2.5 Step=.01 
+SweepPlan: DC1_stim Start=.33 Stop=2.5 Step=.01 
 
-Short:I_Probe1  Vdd N__16 Mode=0 SaveCurrent=yes 
-Short:PinShort__Voutp  Voutp__Voutp Voutp Mode=0 SaveCurrent=no
+OutputPlan:DC1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
