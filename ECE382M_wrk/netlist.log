@@ -7,7 +7,7 @@ Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE38
 #include "C:\Users\manth\Github\RFICProject\ECE382M_wrk\130nm_bulk.net"
 #endif
 "nmos":MOSFET1  Voutp Voutp Vin Vin Length=130 nm Width=1 um Mode=1 Noise=yes _M=19 
-Short:I_Probe1  Vdd N__16 Mode=0 SaveCurrent=yes 
+Short:I_Probe1  Voutn N__16 Mode=0 SaveCurrent=yes 
 #uselib "ckt" , "INDQ_Z"
 INDQ_Z:L1  Vdd Voutp L=1.0 nH Q=15 F=5 GHz tune{ 2.4 GHz to 5 GHz by 0.5 GHz } Mode=1 Rdc=0.0 Ohm 
 aele gm=MOSFET3.GM;
@@ -15,16 +15,15 @@ CAPQ:C1  Voutp Vdd C=1.0 pF Q=50 F=100.0 MHz Mode=1
 R:R1  Vdd Voutp R=50 Ohm Noise=yes 
 #uselib "ckt" , "INDQ_Z"
 INDQ_Z:L2  Vin 0 L=1.0 nH Q=15 F=5 GHz tune{ 2.4 GHz to 5 GHz by 0.5 GHz } Mode=1 Rdc=0.0 Ohm 
-"nmos":MOSFET3  N__16 Voutn 0 0 Length=130 nm Width=1 um Mode=1 Noise=yes _M=19 
+"nmos":MOSFET3  N__16 Voutn 0 0 Length=130 nm Width=1 um Mode=1 Noise=yes _M=width 
 V_Source:SRC3  Voutn 0 Type="V_DC" Vdc=vgs V SaveCurrent=1 
 
+width=.13u
 vgs=.332
-Vov=vgs-.332
-gmId=gm/I_Probe1.i
 DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
 SweepVar="vgs" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
 
-SweepPlan: DC1_stim Start=.33 Stop=2.5 Step=.01 
+SweepPlan: DC1_stim Start=0 Stop=2.5 Step=.001 
 
 OutputPlan:DC1_Output \
       Type="Output" \
@@ -43,4 +42,9 @@ OutputPlan:DC1_Output \
       UseDeviceVoltageNestLevel=no \
       DeviceVoltageNestLevel=0 \
       DeviceVoltageDeviceType="All"
+
+V_Source:SRC4  Vdd 0 Type="V_DC" Vdc=2 V SaveCurrent=1 
+ParamSweep:Sweep1 SimInstanceName[1]="DC1" StatusLevel=2 SweepVar="width" SweepPlan="Sweep1_stim" 
+
+SweepPlan: Sweep1_stim Start=.13u Stop=19u Step=.13u 
 
