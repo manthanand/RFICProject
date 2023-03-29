@@ -1,5 +1,7 @@
 <!DOCTYPE SaveWorkspaceState>
 <SaveWorkspaceState>
-    <Windows/>
-    <MainWindowTab tab="2"/>
+    <Windows>
+        <DDS name="LNA_wrk.dds"/>
+    </Windows>
+    <MainWindowTab tab="1"/>
 </SaveWorkspaceState>

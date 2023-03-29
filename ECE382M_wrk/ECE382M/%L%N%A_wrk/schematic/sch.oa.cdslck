@@ -6,11 +6,11 @@
 LockStakeVersion               1.1
 LoginName                      manth
 HostName                       DESKTOP-RR47J6M
-ProcessIdentifier              9800
-ProcessCreationTime_UTC        1679869623
-ProcessCreationTime_Readable   Sun Mar 26 17:27:03 2023 Central Daylight Time
+ProcessIdentifier              4236
+ProcessCreationTime_UTC        1679961605
+ProcessCreationTime_Readable   Mon Mar 27 19:00:05 2023 Central Daylight Time
 AppIdentifier                  OA File System Design Manager
 OSType                         win32
 ReasonForPlacingEditLock       OpenAccess edit lock
 FilePathUsedToEditLock         C:\Users\manth\Github\RFICProject\ECE382M_wrk\ECE382M\%L%N%A_wrk\schematic\sch.oa.cdslck
-TimeEditLocked                 Sun Mar 26 18:02:47 2023 Central Daylight Time
+TimeEditLocked                 Tue Mar 28 16:56:03 2023 Central Daylight Time
