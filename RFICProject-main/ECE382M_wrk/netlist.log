@@ -1,0 +1,47 @@
+; Top Design: "ECE382M:booksoln:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE382M:booksoln:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+#ifndef inc_ECE382M_3abooksoln_3aschematic__130nm__bulk_2enet
+#define inc_ECE382M_3abooksoln_3aschematic__130nm__bulk_2enet 1
+#include "C:\Users\auria\RFICProject-main\ECE382M_wrk\130nm_bulk.net"
+#endif
+L:L1  N__14 N__18 L=1.0 nH Noise=yes  
+C:C1  N__14 N__18 C=1.0 pF 
+R:R1  N__14 N__18 R=50 Ohm Noise=yes 
+R:R2  Vin N__12 R=50 Ohm Noise=yes 
+L:L2  N__13 0 L=1.0 nH Noise=yes  
+C:C2  Vout 0 C=1.0 pF 
+"nmos":MOSFET1  N__18 N__14 N__11 0 Length=130 nm Mode=1 Noise=yes 
+"nmos":MOSFET3  Vout Vout 0 0 Length=130 nm Mode=1 Noise=yes 
+"nmos":MOSFET2  N__11 Vout N__12 0 Length=130 nm Width=width Mode=1 Noise=yes 
+V_Source:SRC1  Vin 0 Type="V_AC" Vdc=0.0 V Vac=polar(1,0) V Freq=5 GHz V_Noise=0 uV SaveCurrent=1 
+V_Source:SRC2  N__14 0 Type="V_DC" Vdc=2.5 V SaveCurrent=1 
+I_Source:SRC3  N__14 Vout Type="I_DC" Idc=1 
+DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
+SweepVar="width" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
+
+SweepPlan: DC1_stim Start=10u Stop=100u Step=.001 
+
+OutputPlan:DC1_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
+aele gm=MOSFET2.GM;
+
+width=10u
+Short:I_Probe1  N__12 N__13 Mode=0 SaveCurrent=yes 

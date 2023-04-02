@@ -1,0 +1,31 @@
+Netlist Translator (*) 571.shp Nov  8 2022
+ADS Netlist translation log
+
+Input format: HSPICE
+Input filename: C:/Users/manth/Documents/RFIC Project/ECE382M_wrk/130nm_bulk.hspice
+
+Output format: ADS Netlist file
+Output filename: C:\Users\manth\Documents\RFIC Project\ECE382M_wrk\130nm_bulk.net
+
+Special options:
+    Processing first line as comment.
+
+Begin translation at Fri Mar 24 15:00:40 2023
+
+Creating netlist.
+Reading item definition file "C:\Program Files\Keysight\ADS2023_Update1/config\spctoiff.cfg"
+The following SPICE parameters from element nmos in circuit UNNAMED were ignored in translation:
+    lmin = 1.3e-7
+    lmax = 1.3e-7
+    wmin = 1.3e-7
+    wmax = 1.0e-4
+    binflag = 0
+The following SPICE parameters from element pmos in circuit UNNAMED were ignored in translation:
+    lmin = 1.3e-7
+    lmax = 1.3e-7
+    wmin = 1.3e-7
+    wmax = 1.0e-4
+    binflag = 0
+Subcircuits found in Spice Netlist:   0
+Subcircuits written to ADS Netlist:   0
+Translation completed at Fri Mar 24 15:00:40 2023.

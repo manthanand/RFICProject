@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      auria
+HostName                       AuriaSurface
+ProcessIdentifier              28948
+ProcessCreationTime_UTC        1680019895
+ProcessCreationTime_Readable   Tue Mar 28 11:11:35 2023 Central Daylight Time
+AppIdentifier                  OA File System Design Manager
+OSType                         win32
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         C:\Users\auria\RFICProject-main\ECE382M_wrk\ECE382M\booksoln\schematic\sch.oa.cdslck
+TimeEditLocked                 Sun Apr  2 11:20:21 2023 Central Daylight Time

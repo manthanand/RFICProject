@@ -1,0 +1,23 @@
+
+hpeesofsim (*) 571.shp Nov  8 2022, MINT version 5
+    (64-bit windows built: Wed Nov 09, 2022 05:38:21 +0000)
+
+
+***** Simulation started at Sun Apr  2 12:30:49 2023
+      Running on host: "AuriaSurface"
+      In Directory: "C:\Users\auria\RFICProject-main\ECE382M_wrk\data"
+      Process ID: 3196
+
+Warning detected by hpeesofsim in MOSFET2 during circuit set up.
+    Pd = 0 is less than W.
+
+Warning detected by hpeesofsim in MOSFET2 during circuit set up.
+    Ps = 0 is less than W.
+
+
+DC DC1[1] <ECE382M:booksoln:schematic>   width=(10e-06->100e-06)
+..
+
+Resource usage:
+  Total stopwatch time     =     1.17 seconds.
+
