@@ -15,13 +15,13 @@ RFpower=-50
 RFfreq=5
 width=5.6
 V_Source:SRC4  Vdd 0 Type="V_DC" Vdc=2.5 V SaveCurrent=1 
-"nmos":MOSFET4  N__17 N__0 N__3 0 Length=130 nm Width=width um Mode=1 Noise=yes _M=10 
-R:R3  Vdd Vout R=750 Ohm Noise=yes 
+"nmos":MOSFET4  N__17 N__0 N__3 0 Length=130 nm Width=width um Mode=1 Noise=yes _M=20 
+R:R3  Vdd Vout R=1575 Ohm tune{ 375 Ohm to 3000 Ohm by 75 Ohm } Noise=yes 
 R:R2  Vdd N__0 R=100 kOhm Noise=yes 
-C:C2  Vout Vdd C=30 fF 
-L:L3  Vdd Vout L=10 nH Noise=yes  
-"nmos":MOSFET5  Vout Vdd N__17 0 Length=130 nm Width=width um Mode=1 Noise=yes _M=10 
-L:L4  N__3 0 L=10 nH Noise=yes  
+C:C2  Vout Vdd C=15 fF tune{ 15 fF to 70 fF by 3 fF } 
+L:L3  Vdd Vout L=27 nH tune{ 5 nH to 30 nH by 1 nH } Noise=yes  
+"nmos":MOSFET5  Vout Vdd N__17 0 Length=130 nm Width=width um Mode=1 Noise=yes _M=20 
+L:L4  N__3 0 L=10 nH tune{ 5 nH to 15 nH by 1 nH } Noise=yes  
 C:C3  0 N__0 C=1 pF 
 AC:AC1 CalcNoise=no SortNoise=0 IncludePortNoise=yes BandwidthForNoise=1 Hz FreqConversion=no UseFiniteDiff=no StatusLevel=2 OutputBudgetIV=no DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="AC1_stim" OutputPlan="AC1_Output" 
