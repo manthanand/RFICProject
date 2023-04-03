@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dc_annotation_options>
+ <options view="schematic" ToggleVoltage="true" ToggleCurrent="true" cell="LNA_wrk" library="ECE382M"/>
+</dc_annotation_options>

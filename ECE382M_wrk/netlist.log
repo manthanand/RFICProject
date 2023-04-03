@@ -6,25 +6,13 @@ Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE38
 #define inc_ECE382M_3aLNA__wrk_3aschematic__130nm__bulk_2enet 1
 #include "C:\Users\manth\Github\RFICProject\ECE382M_wrk\130nm_bulk.net"
 #endif
-"nmos":MOSFET1  N__14 N__13 Vin Vin Length=130 nm Width=1 um Mode=1 Noise=yes _M=19 
-Short:I_Probe1  Vdd N__16 Mode=0 SaveCurrent=yes 
-#uselib "ckt" , "INDQ_Z"
-INDQ_Z:L1  Vdd N__14 L=1.0 nH Q=15 F=5 GHz tune{ 2.4 GHz to 5 GHz by 0.5 GHz } Mode=1 Rdc=0.0 Ohm 
-aele ft=gm/cgs;cgs=MOSFET3.Cgso * width;Vov = vgs - .332;GmId = gm/I_Probe1.i;gm=MOSFET3.GM;
-CAPQ:C1  N__14 Vdd C=1.0 pF Q=50 F=100.0 MHz Mode=1 
-R:R1  Vdd N__14 R=50 Ohm Noise=yes 
-#uselib "ckt" , "INDQ_Z"
-INDQ_Z:L2  Vin 0 L=1.0 nH Q=15 F=5 GHz tune{ 2.4 GHz to 5 GHz by 0.5 GHz } Mode=1 Rdc=0.0 Ohm 
-"nmos":MOSFET3  N__16 N__12 0 0 Length=130 nm Width=width Mode=1 Noise=yes _M=mult 
-V_Source:SRC3  N__12 0 Type="V_DC" Vdc=vgs V SaveCurrent=1 
+aele ft=gm/cgs;id = MOSFET4.Id;vds = MOSFET4.Vds;cgs=MOSFET4.Cgso * width;Vov = vgs - MOSFET4.Vth;GmId = gm/id;gm=MOSFET4.Gm;
+"nmos":MOSFET3  N__0 N__0 0 0 Length=130 nm Width=1.2 um Mode=1 Noise=yes _M=1 
 
-width=28u
-mult=6
-vgs=1.332
+vgs=1.3
+width=5.7
 DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
-SweepVar="vgs" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
-
-SweepPlan: DC1_stim Start=0 Stop=2.5 Step=.001 
+OutputPlan="DC1_Output" 
 
 OutputPlan:DC1_Output \
       Type="Output" \
@@ -44,4 +32,12 @@ OutputPlan:DC1_Output \
       DeviceVoltageNestLevel=0 \
       DeviceVoltageDeviceType="All"
 
-V_Source:SRC4  Vdd 0 Type="V_DC" Vdc=1.25 V SaveCurrent=1 
+V_Source:SRC4  Vdd 0 Type="V_DC" Vdc=2.5 V SaveCurrent=1 
+"nmos":MOSFET4  N__17 N__0 Vin 0 Length=130 nm Width=width um Mode=1 Noise=yes _M=10 
+R:R3  Vdd N__12 R=750 Ohm Noise=yes 
+R:R2  Vdd N__0 R=100 kOhm Noise=yes 
+C:C2  N__12 Vdd C=30 fF 
+L:L3  Vdd N__12 L=10 nH Noise=yes  
+"nmos":MOSFET5  N__12 Vdd N__17 0 Length=130 nm Width=width um Mode=1 Noise=yes _M=10 
+L:L4  Vin 0 L=10 nH Noise=yes  
+C:C3  0 N__0 C=1 pF 
