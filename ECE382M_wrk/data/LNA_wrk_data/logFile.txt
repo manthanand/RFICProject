@@ -3,10 +3,10 @@ hpeesofsim (*) 571.shp Nov  8 2022, MINT version 5
     (64-bit windows built: Wed Nov 09, 2022 05:38:21 +0000)
 
 
-***** Simulation started at Sun Apr  2 22:16:14 2023
+***** Simulation started at Mon Apr  3 15:27:34 2023
       Running on host: "DESKTOP-RR47J6M"
       In Directory: "C:\Users\manth\Github\RFICProject\ECE382M_wrk\data"
-      Process ID: 16396
+      Process ID: 12744
 
 Warning detected by hpeesofsim in MOSFET5 during circuit set up.
     Pd = 0 is less than W.
@@ -15,10 +15,9 @@ Warning detected by hpeesofsim in MOSFET5 during circuit set up.
     Ps = 0 is less than W.
 
 
-DC DC1[1] <ECE382M:LNA_wrk:schematic>  
-.
-DC convergence achieved in 44 iterations.
+AC AC1[1] <ECE382M:LNA_wrk:schematic>   freq=(1 GHz->10 GHz)
+
 
 Resource usage:
-  Total stopwatch time     =     0.59 seconds.
+  Total stopwatch time     =     0.57 seconds.
 

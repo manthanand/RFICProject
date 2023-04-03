@@ -1,4 +1,4 @@
-﻿<ADSWorkspace Revision="7" Version="100">
+﻿<ADSWorkspace Revision="9" Version="100">
     <Workspace Name="">
         <WrkAel Name="spice.ael" />
         <LibraryDefs Name="lib.defs" />
@@ -38,12 +38,48 @@
         <Library Name="ECE382M" />
         <Library Name="130nm_bulk_lib" />
         <Cell Name="130nm_bulk_lib:130nm_bulk" />
-        <Dataset Name="LNA.ds" />
         <Data_Files Name="dc_annotation\%E%C%E382%M_%L%N%A_schematic\annotation_1.xml" />
         <Data_Files Name="dc_annotation\%E%C%E382%M_%L%N%A_schematic\annotation_map.xml" />
-        <Data_Files Name="LNA.ds" />
-        <Data_Files Name="LNA_data\logFile.txt" />
         <Cell Name="ECE382M:LNA_wrk" />
         <Cell Name="ECE382M:Testbench" />
+        <Data_Display Name="LNA_wrk.dds" />
+        <Dataset Name="LNA_wrk.ds" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_%L%N%A_wrk_schematic\annotation_1.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_%L%N%A_wrk_schematic\annotation_map.xml" />
+        <Data_Files Name="LNA_wrk.ds" />
+        <Data_Files Name="LNA_wrk_data\logFile.txt" />
+        <Library Name="1xEV" />
+        <Library Name="3GPPFDD" />
+        <Library Name="3GPPFDD_10_99" />
+        <Library Name="Antennas_and_Propagation" />
+        <Library Name="CDMA" />
+        <Library Name="cdma2000" />
+        <Library Name="Circuit_Cosimulation" />
+        <Library Name="CMMB" />
+        <Library Name="Controllers" />
+        <Library Name="DTMB" />
+        <Library Name="DTV" />
+        <Library Name="EDGE" />
+        <Library Name="GSM" />
+        <Library Name="HDL_Blocks" />
+        <Library Name="HSDPA" />
+        <Library Name="HSUPA" />
+        <Library Name="Instruments" />
+        <Library Name="Interactive_Controls_and_Displays" />
+        <Library Name="LTE" />
+        <Library Name="Numeric" />
+        <Library Name="Obsolete" />
+        <Library Name="Signal_Converters" />
+        <Library Name="Simulation_Sequencing" />
+        <Library Name="Sinks" />
+        <Library Name="SystemVue_Cosimulation" />
+        <Library Name="TDSCDMA" />
+        <Library Name="Timed" />
+        <Library Name="UMB" />
+        <Library Name="UWB" />
+        <Library Name="WLAN" />
+        <Library Name="WLAN_11n" />
+        <Library Name="WMAN" />
+        <Library Name="WMAN_16e" />
     </Workspace>
 </ADSWorkspace>
