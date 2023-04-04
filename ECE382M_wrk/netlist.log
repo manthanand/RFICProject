@@ -6,23 +6,17 @@ Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE38
 #define inc_ECE382M_3aLNA__wrk_3aschematic__130nm__bulk_2enet 1
 #include "C:\Users\manth\Github\RFICProject\ECE382M_wrk\130nm_bulk.net"
 #endif
-aele ft=gm/cgs;gain = Vout/Vin;id = MOSFET4.Id;vds = MOSFET4.Vds;cgs=MOSFET4.Cgso * width;Vov = vgs - MOSFET4.Vth;GmId = gm/id;gm=MOSFET4.Gm;
-"nmos":MOSFET3  N__0 N__0 0 0 Length=130 nm Width=1.2 um Mode=1 Noise=yes _M=1 
+V_Source:SRC6  Vin 0 Type="V_AC" Vdc=0.0 V Vac=10 mV Freq=freq V_Noise=0 uV SaveCurrent=1 
+"nmos":MOSFET6  N__13 N__1 N__3 0 Length=130 nm Width=3.6 um Mode=1 Noise=yes _M=20 
+aele gain = Vout/Vin;id = MOSFET6.Id;vds = MOSFET4.Vds;Vov = MOSFET4.Vgs - MOSFET4.Vth;GmId = gm/id;gm=MOSFET6.Gm;
+C:C3  0 N__0 C=1 pF 
+L:L4  N__6 0 L=10 nH tune{ 5 nH to 30 nH by 1 nH } Noise=yes  
+"nmos":MOSFET7  N__14 N__3 0 0 Length=130 nm Width=1.2 um Mode=1 Noise=yes _M=1 
+"nmos":MOSFET3  N__0 N__0 0 0 Length=130 nm Width=3.6 um tune{ 1.8 um to 5.4 um by 0.36 um } Mode=1 Noise=yes _M=1 
+C:C2  Vout Vdd C=21 fF 
 
-vgs=1.3
-res=50
-RFpower=-50
-RFfreq=5
 width=5.6
 V_Source:SRC4  Vdd 0 Type="V_DC" Vdc=2.5 V SaveCurrent=1 
-"nmos":MOSFET4  N__17 N__0 N__3 0 Length=130 nm Width=width um Mode=1 Noise=yes _M=20 
-R:R3  Vdd Vout R=1575 Ohm tune{ 375 Ohm to 3000 Ohm by 75 Ohm } Noise=yes 
-R:R2  Vdd N__0 R=100 kOhm Noise=yes 
-C:C2  Vout Vdd C=15 fF tune{ 15 fF to 70 fF by 3 fF } 
-L:L3  Vdd Vout L=27 nH tune{ 5 nH to 30 nH by 1 nH } Noise=yes  
-"nmos":MOSFET5  Vout Vdd N__17 0 Length=130 nm Width=width um Mode=1 Noise=yes _M=20 
-L:L4  N__3 0 L=10 nH tune{ 5 nH to 15 nH by 1 nH } Noise=yes  
-C:C3  0 N__0 C=1 pF 
 AC:AC1 CalcNoise=no SortNoise=0 IncludePortNoise=yes BandwidthForNoise=1 Hz FreqConversion=no UseFiniteDiff=no StatusLevel=2 OutputBudgetIV=no DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="AC1_stim" OutputPlan="AC1_Output" 
 
@@ -46,5 +40,13 @@ OutputPlan:AC1_Output \
       DeviceVoltageNestLevel=0 \
       DeviceVoltageDeviceType="All"
 
-V_Source:SRC6  Vin 0 Type="V_AC" Vdc=0.0 V Vac=10 mV Freq=freq V_Noise=0 uV SaveCurrent=1 
-R:R4  Vin N__3 R=50 Ohm Noise=yes 
+R:R6  Vdd N__13 R=100 kOhm Noise=yes 
+"nmos":MOSFET5  Vout Vdd N__17 0 Length=130 nm Width=5.6 um Mode=1 Noise=yes _M=20 
+L:L3  Vdd Vout L=25 nH Noise=yes  
+"nmos":MOSFET4  N__17 N__0 N__6 0 Length=130 nm Width=5.6 um Mode=1 Noise=yes _M=20 
+R:R3  Vdd Vout R=1650 Ohm Noise=yes 
+R:R2  Vdd N__0 R=203 kOhm Noise=yes 
+R:R4  Vin N__6 R=50 Ohm Noise=yes 
+R:R7  Vdd N__14 R=100 kOhm Noise=yes 
+R:R8  Vdd N__1 R=200 kOhm Noise=yes 
+"nmos":MOSFET8  N__1 N__1 N__3 0 Length=130 nm Width=3.6 um Mode=1 Noise=yes _M=1 
