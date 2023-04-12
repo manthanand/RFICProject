@@ -10,7 +10,7 @@ ddoId = get_new(ddsId, "Object");
 // DataDisplay Object:
 	set(ddoId, "Path", dds_get_exec_path(what_file(0)));
 	set(ddoId, "Name", dds_get_exec_file(what_file(0)));
-	set(ddoId, "FileModifiedDateAndTime", "2023-03-29T21:06:50Z");
+	set(ddoId, "FileModifiedDateAndTime", "2023-04-02T17:58:09Z");
 	set(ddoId, "FileCreatedDateAndTime", "2023-03-27T01:04:08Z");
 	dssId = get(ddoId, "DatasetServer");
 // Default Dataset
@@ -36,7 +36,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "Uid", 1658735473);
 // Graphical Object:
 	set(goId0, "Right", 6475);
-	set(goId0, "Bottom", 5629);
+	set(goId0, "Bottom", 5710);
 	set(goId0, "Left", 2125);
 	set(goId0, "Top", 2625);
 	set(goId0, "Zrot", 0.0);
@@ -54,7 +54,7 @@ goId0 = get_new(pageId, "Plot");
 	set(goId0, "LeftMargin", 500);
 	set(goId0, "RightMargin", 100);
 	set(goId0, "TopMargin", 125);
-	set(goId0, "BottomMargin", 504);
+	set(goId0, "BottomMargin", 585);
 // Plot Title...
 	set(goId0, "Title", "");
 	set(goId0, "TitleFont", "Arial For CAE");
@@ -191,7 +191,7 @@ traceID = get_new(goId0, "Trace", "plot_vs(GmId, Vov)", "X Axis", "Y Axis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
-markerID = get_new(traceID, "MarkerNew", "m2", "0.73799999999999288391450136259664", 0, "", "", 1, "");
+markerID = get_new(traceID, "MarkerNew", "m2", "0.73799999999999288391450136259664", 15, "", "", 1, "");
 // Base Class Object:
 	set(markerID, "Name", "");
 	set(markerID, "Uid", 1672233399);
@@ -242,8 +242,8 @@ markerID = get_new(traceID, "MarkerNew", "m2", "0.737999999999992883914501362596
 		set(markerID, "MkrReadoutFontSize", 167);
 		set(markerID, "MkrReadoutColor", 0);
 		set(markerID, "MkrReadoutLeft", 2625);
-		set(markerID, "MkrReadoutRight", 4584);
-		set(markerID, "MkrReadoutBottom", 2474);
+		set(markerID, "MkrReadoutRight", 4191);
+		set(markerID, "MkrReadoutBottom", 2498);
 		set(markerID, "MkrReadoutTop", 1957);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -328,8 +328,8 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 0.25);
-		 set(axisID, "StepSize", 0.05);
+		 set(axisID, "MaxValue", 0.16);
+		 set(axisID, "StepSize", 0.02);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
@@ -584,7 +584,7 @@ traceID = get_new(goId0, "Trace", "plot_vs(ft, GmId)", "X Axis", "Y Axis");
 			set(traceID, "DensitySymbolType", ddsDotSymbol);
 		}
 	}
-markerID = get_new(traceID, "MarkerNew", "m1", "0.70679348365719540936424891697243", 0, "", "2626647819831.06201171875000000000000000000000", 1, "");
+markerID = get_new(traceID, "MarkerNew", "m1", "0.70679348365719540936424891697243", 15, "", "2626647819831.06201171875000000000000000000000", 1, "");
 // Base Class Object:
 	set(markerID, "Name", "");
 	set(markerID, "Uid", 1786285076);
@@ -635,8 +635,8 @@ markerID = get_new(traceID, "MarkerNew", "m1", "0.706793483657195409364248916972
 		set(markerID, "MkrReadoutFontSize", 167);
 		set(markerID, "MkrReadoutColor", 0);
 		set(markerID, "MkrReadoutLeft", 2625);
-		set(markerID, "MkrReadoutRight", 4686);
-		set(markerID, "MkrReadoutBottom", 9392);
+		set(markerID, "MkrReadoutRight", 3996);
+		set(markerID, "MkrReadoutBottom", 9416);
 		set(markerID, "MkrReadoutTop", 8875);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -698,7 +698,7 @@ axisID = get_new(goId0, "Axis", ddsXaxis, "X Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 0.24);
+		 set(axisID, "MaxValue", 0.16);
 		 set(axisID, "StepSize", 0.02);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
@@ -721,8 +721,8 @@ axisID = get_new(goId0, "Axis", ddsYaxis, "Y Axis");
 		 set(axisID, "TickFontSize", 112);
 		 set(axisID, "AutoscaleOnOff", TRUE);
 		 set(axisID, "MinValue", 0);
-		 set(axisID, "MaxValue", 0.025);
-		 set(axisID, "StepSize", 0.005);
+		 set(axisID, "MaxValue", 0.016);
+		 set(axisID, "StepSize", 0.002);
 		 set(axisID, "Logarithmic", FALSE);
 		 set(axisID, "Font", "Arial For CAE");
 		 set(axisID, "Format", ddsFormatAutomatic);
@@ -864,8 +864,8 @@ markerID = get_new(traceID, "MarkerNew", "m3", "0.068185572594877896790421800687
 		set(markerID, "MkrReadoutFontSize", 167);
 		set(markerID, "MkrReadoutColor", 0);
 		set(markerID, "MkrReadoutLeft", 6875);
-		set(markerID, "MkrReadoutRight", 9131);
-		set(markerID, "MkrReadoutBottom", 2517);
+		set(markerID, "MkrReadoutRight", 9155);
+		set(markerID, "MkrReadoutBottom", 2541);
 		set(markerID, "MkrReadoutTop", 2000);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -929,8 +929,8 @@ markerID = get_new(traceID, "MarkerNew", "m4", "0.100494772031617260465985452810
 		set(markerID, "MkrReadoutFontSize", 167);
 		set(markerID, "MkrReadoutColor", 0);
 		set(markerID, "MkrReadoutLeft", 9250);
-		set(markerID, "MkrReadoutRight", 11506);
-		set(markerID, "MkrReadoutBottom", 2517);
+		set(markerID, "MkrReadoutRight", 11530);
+		set(markerID, "MkrReadoutBottom", 2541);
 		set(markerID, "MkrReadoutTop", 2000);
 		set(markerID, "MkrIndicatorColor", 0);
 		set(markerID, "MkrIndicatorSize", 6);
@@ -953,12 +953,12 @@ markerID = get_new(traceID, "MarkerNew", "m4", "0.100494772031617260465985452810
 	set(ddoId, "UpdateAllExpressions", TRUE);
 	set(ddoId, "EnableExpressionUpdates", TRUE);
 
-ddWinId = get_new(ddsId, "Window", 161, 50, 1536, 864);
+ddWinId = get_new(ddsId, "Window", 0, 0, 562, 693);
 	set(ddWinId, "Object", ddoId);
 	set(ddWinId, "CurrentPage", 257833157);
-	set(ddWinId, "PageViewRect_257833157", list(1439, 5710, 10010, 1369));
-	set(ddWinId, "Frame", list(161, 50, 1536, 864));
-	set(ddWinId, "Maximized", TRUE);
+	set(ddWinId, "PageViewRect_257833157", list(6485, 6623, 11699, 58));
+	set(ddWinId, "Frame", list(0, 0, 562, 693));
+	set(ddWinId, "Maximized", FALSE);
 	set(ddWinId, "ForegroundColor", 0);
 	set(ddWinId, "BackgroundColor", 8);
 	set(ddWinId, "WindowPageOrder", list("page 1"));

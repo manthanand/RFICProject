@@ -1,29 +1,31 @@
-; Top Design: "ECE382M:booksoln:schematic"
+; Top Design: "ECE382M:mixer:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE382M:booksoln:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
-#ifndef inc_ECE382M_3abooksoln_3aschematic__130nm__bulk_2enet
-#define inc_ECE382M_3abooksoln_3aschematic__130nm__bulk_2enet 1
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE382M:mixer:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+#ifndef inc_ECE382M_3amixer_3aschematic__130nm__bulk_2enet
+#define inc_ECE382M_3amixer_3aschematic__130nm__bulk_2enet 1
 #include "C:\Users\auria\RFICProject-main\ECE382M_wrk\130nm_bulk.net"
 #endif
-L:L1  N__14 N__18 L=1.0 nH Noise=yes  
-C:C1  N__14 N__18 C=1.0 pF 
-R:R1  N__14 N__18 R=50 Ohm Noise=yes 
-R:R2  Vin N__12 R=50 Ohm Noise=yes 
-L:L2  N__13 0 L=1.0 nH Noise=yes  
-C:C2  Vout 0 C=1.0 pF 
-"nmos":MOSFET1  N__18 N__14 N__11 0 Length=130 nm Mode=1 Noise=yes 
-"nmos":MOSFET3  Vout Vout 0 0 Length=130 nm Mode=1 Noise=yes 
-"nmos":MOSFET2  N__11 Vout N__12 0 Length=130 nm Width=width Mode=1 Noise=yes 
-V_Source:SRC1  Vin 0 Type="V_AC" Vdc=0.0 V Vac=polar(1,0) V Freq=5 GHz V_Noise=0 uV SaveCurrent=1 
-V_Source:SRC2  N__14 0 Type="V_DC" Vdc=2.5 V SaveCurrent=1 
-I_Source:SRC3  N__14 Vout Type="I_DC" Idc=1 
-DC:DC1 StatusLevel=2 DevOpPtLevel=0 UseFiniteDiff=no PrintOpPoint=no Restart=1 \
-SweepVar="width" SweepPlan="DC1_stim" OutputPlan="DC1_Output" 
+V_Source:SRC1  N__15 0 Type="V_AC" Vdc=0.0 V Vac=polar(1.2,180) V Freq=0.95 GHz V_Noise=0 uV SaveCurrent=1 
+V_Source:SRC2  N__6 0 Type="V_AC" Vdc=0.0 V Vac=polar(1.2,0) V Freq=0.95 GHz V_Noise=0 uV SaveCurrent=1 
+R:R2  Vout2 0 R=50 Ohm Noise=yes 
+R:R1  Vout1 0 R=50 Ohm Noise=yes 
+"nmos":MOSFET2  Vout1 N__1 N__11 0 Length=130 nm Width=width um Mode=1 Noise=yes 
+"nmos":MOSFET4  Vout2 N__10 N__11 0 Length=130 nm Width=width um Mode=1 Noise=yes 
+"nmos":MOSFET1  Vout1 N__12 N__17 0 Length=130 nm Width=width um Mode=1 Noise=yes 
+"nmos":MOSFET3  Vout2 N__1 N__17 0 Length=130 nm Width=width um Mode=1 Noise=yes 
+V_Source:SRC3  N__19 0 Type="V_AC" Vdc=0.0 V Vac=polar(1.2,0) V Freq=0.95 GHz V_Noise=0 uV SaveCurrent=1 
+C:C1  N__6 N__12 C=1.0 nF 
+C:C2  N__15 N__1 C=1.0 nF 
+C:C3  N__19 N__10 C=1.0 nF 
+#uselib "ckt" , "tf"
+tf:TF1  vin N__17 0 N__11 T=2 
+HB:HB2 MaxOrder=5 Freq[1]=LOfreq GHz Freq[2]=RFfreq GHz Order[1]=11 Order[2]=3 StatusLevel=2 FundOversample=1 \
+Restart=no OutputBudgetIV=no HBSS_WSP=0 SweepVar="RFfreq" SweepPlan="HB2_stim" OutputPlan="HB2_Output" UseKrylov=yes 
 
-SweepPlan: DC1_stim Start=10u Stop=100u Step=.001 
+SweepPlan: HB2_stim Start=1 Stop=10 Step=1 
 
-OutputPlan:DC1_Output \
+OutputPlan:HB2_Output \
       Type="Output" \
       UseNodeNestLevel=yes \
       NodeNestLevel=2 \
@@ -31,6 +33,9 @@ OutputPlan:DC1_Output \
       EquationNestLevel=2 \
       UseSavedEquationNestLevel=yes \
       SavedEquationNestLevel=2 \
+      SavedEquationName[1]="IFfreq" \
+      SavedEquationName[2]="LOfreq" \
+      SavedEquationName[3]="Rload" \
       UseDeviceCurrentNestLevel=no \
       DeviceCurrentNestLevel=0 \
       DeviceCurrentDeviceType="All" \
@@ -41,7 +46,23 @@ OutputPlan:DC1_Output \
       DeviceVoltageNestLevel=0 \
       DeviceVoltageDeviceType="All"
 
-aele gm=MOSFET2.GM;
+Tran:HB2_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
+Freq[1]=LOfreq GHz Order[1]=11 
 
-width=10u
-Short:I_Probe1  N__12 N__13 Mode=0 SaveCurrent=yes 
+Component:tahb_HB2 Module="ATAHB" Type="ModelExtractor" \ 
+ Tran_Analysis="HB2_tran" HB_Analysis="HB2" 
+
+Port:PORT1  N__7 0 Num=1 Z=50 P[1]=dbmtow(RFpower) Freq[1]=RFfreq GHz    Noise=yes 
+
+RFfreq=5
+IFfreq=0.05
+df=0.01
+LOfreq=RFfreq-IFfreq
+RFpower=-50
+aele CG_linear=mag(mix(HB.Vout,{1,-1})/mix(HB.vin,{0,1}));CG_linear_p=mag(mix(HB.Vout2,{1,-1})/mix(HB.vin,{0,1}));CG_linear_n=mag(mix(HB.Vout1,{1,-1})/mix(HB.vin,{0,1}));CG_dB=20*log(CG_linear);CG_dB_p=20*log(CG_linear_p);CG_dB_n=20*log(CG_linear_n);
+#uselib "ckt" , "Balun3Port"
+Balun3Port:CMP1  Vout Vout1 Vout2 
+Port:Term2  Vout 0 Num=2 Z=100 kOhm Noise=yes 
+Short:DC_Block2  N__7 vin Mode=1 
+
+width=1 tune{ 0.1 to 100 by 0.1 }
