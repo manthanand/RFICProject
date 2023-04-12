@@ -3,21 +3,331 @@ hpeesofsim (*) 571.shp Nov  8 2022, MINT version 5
     (64-bit windows built: Wed Nov 09, 2022 05:38:21 +0000)
 
 
-***** Simulation started at Tue Apr  4 12:23:06 2023
+***** Simulation started at Wed Apr 12 10:50:26 2023
       Running on host: "DESKTOP-RR47J6M"
       In Directory: "C:\Users\manth\Github\RFICProject\ECE382M_wrk\data"
-      Process ID: 19580
+      Process ID: 7584
 
-Warning detected by hpeesofsim in MOSFET8 during circuit set up.
+Warning detected by hpeesofsim in MOSFET2 during circuit set up.
     Pd = 0 is less than W.
 
-Warning detected by hpeesofsim in MOSFET8 during circuit set up.
+Warning detected by hpeesofsim in MOSFET2 during circuit set up.
     Ps = 0 is less than W.
 
 
-AC AC1[1] <ECE382M:LNA_wrk:schematic>   freq=(1 GHz->10 GHz)
+CT Sweep1[1] <ECE382M:LNA_wrk:schematic>   Rtest=(1->100)
+
+SP Sweep1[1].SP1[1/100] <ECE382M:LNA_wrk:schematic>  Rtest=1  freq=1 GHz
+
+
+SP Sweep1[1].SP1[2/100] <ECE382M:LNA_wrk:schematic>  Rtest=2  freq=1 GHz
+
+
+SP Sweep1[1].SP1[3/100] <ECE382M:LNA_wrk:schematic>  Rtest=3  freq=1 GHz
+
+
+SP Sweep1[1].SP1[4/100] <ECE382M:LNA_wrk:schematic>  Rtest=4  freq=1 GHz
+
+
+SP Sweep1[1].SP1[5/100] <ECE382M:LNA_wrk:schematic>  Rtest=5  freq=1 GHz
+
+
+SP Sweep1[1].SP1[6/100] <ECE382M:LNA_wrk:schematic>  Rtest=6  freq=1 GHz
+
+
+SP Sweep1[1].SP1[7/100] <ECE382M:LNA_wrk:schematic>  Rtest=7  freq=1 GHz
+
+
+SP Sweep1[1].SP1[8/100] <ECE382M:LNA_wrk:schematic>  Rtest=8  freq=1 GHz
+
+
+SP Sweep1[1].SP1[9/100] <ECE382M:LNA_wrk:schematic>  Rtest=9  freq=1 GHz
+
+
+SP Sweep1[1].SP1[10/100] <ECE382M:LNA_wrk:schematic>  Rtest=10  freq=1 GHz
+
+
+SP Sweep1[1].SP1[11/100] <ECE382M:LNA_wrk:schematic>  Rtest=11  freq=1 GHz
+
+
+SP Sweep1[1].SP1[12/100] <ECE382M:LNA_wrk:schematic>  Rtest=12  freq=1 GHz
+
+
+SP Sweep1[1].SP1[13/100] <ECE382M:LNA_wrk:schematic>  Rtest=13  freq=1 GHz
+
+
+SP Sweep1[1].SP1[14/100] <ECE382M:LNA_wrk:schematic>  Rtest=14  freq=1 GHz
+
+
+SP Sweep1[1].SP1[15/100] <ECE382M:LNA_wrk:schematic>  Rtest=15  freq=1 GHz
+
+
+SP Sweep1[1].SP1[16/100] <ECE382M:LNA_wrk:schematic>  Rtest=16  freq=1 GHz
+
+
+SP Sweep1[1].SP1[17/100] <ECE382M:LNA_wrk:schematic>  Rtest=17  freq=1 GHz
+
+
+SP Sweep1[1].SP1[18/100] <ECE382M:LNA_wrk:schematic>  Rtest=18  freq=1 GHz
+
+
+SP Sweep1[1].SP1[19/100] <ECE382M:LNA_wrk:schematic>  Rtest=19  freq=1 GHz
+
+
+SP Sweep1[1].SP1[20/100] <ECE382M:LNA_wrk:schematic>  Rtest=20  freq=1 GHz
+
+
+SP Sweep1[1].SP1[21/100] <ECE382M:LNA_wrk:schematic>  Rtest=21  freq=1 GHz
+
+
+SP Sweep1[1].SP1[22/100] <ECE382M:LNA_wrk:schematic>  Rtest=22  freq=1 GHz
+
+
+SP Sweep1[1].SP1[23/100] <ECE382M:LNA_wrk:schematic>  Rtest=23  freq=1 GHz
+
+
+SP Sweep1[1].SP1[24/100] <ECE382M:LNA_wrk:schematic>  Rtest=24  freq=1 GHz
+
+
+SP Sweep1[1].SP1[25/100] <ECE382M:LNA_wrk:schematic>  Rtest=25  freq=1 GHz
+
+
+SP Sweep1[1].SP1[26/100] <ECE382M:LNA_wrk:schematic>  Rtest=26  freq=1 GHz
+
+
+SP Sweep1[1].SP1[27/100] <ECE382M:LNA_wrk:schematic>  Rtest=27  freq=1 GHz
+
+
+SP Sweep1[1].SP1[28/100] <ECE382M:LNA_wrk:schematic>  Rtest=28  freq=1 GHz
+
+
+SP Sweep1[1].SP1[29/100] <ECE382M:LNA_wrk:schematic>  Rtest=29  freq=1 GHz
+
+
+SP Sweep1[1].SP1[30/100] <ECE382M:LNA_wrk:schematic>  Rtest=30  freq=1 GHz
+
+
+SP Sweep1[1].SP1[31/100] <ECE382M:LNA_wrk:schematic>  Rtest=31  freq=1 GHz
+
+
+SP Sweep1[1].SP1[32/100] <ECE382M:LNA_wrk:schematic>  Rtest=32  freq=1 GHz
+
+
+SP Sweep1[1].SP1[33/100] <ECE382M:LNA_wrk:schematic>  Rtest=33  freq=1 GHz
+
+
+SP Sweep1[1].SP1[34/100] <ECE382M:LNA_wrk:schematic>  Rtest=34  freq=1 GHz
+
+
+SP Sweep1[1].SP1[35/100] <ECE382M:LNA_wrk:schematic>  Rtest=35  freq=1 GHz
+
+
+SP Sweep1[1].SP1[36/100] <ECE382M:LNA_wrk:schematic>  Rtest=36  freq=1 GHz
+
+
+SP Sweep1[1].SP1[37/100] <ECE382M:LNA_wrk:schematic>  Rtest=37  freq=1 GHz
+
+
+SP Sweep1[1].SP1[38/100] <ECE382M:LNA_wrk:schematic>  Rtest=38  freq=1 GHz
+
+
+SP Sweep1[1].SP1[39/100] <ECE382M:LNA_wrk:schematic>  Rtest=39  freq=1 GHz
+
+
+SP Sweep1[1].SP1[40/100] <ECE382M:LNA_wrk:schematic>  Rtest=40  freq=1 GHz
+
+
+SP Sweep1[1].SP1[41/100] <ECE382M:LNA_wrk:schematic>  Rtest=41  freq=1 GHz
+
+
+SP Sweep1[1].SP1[42/100] <ECE382M:LNA_wrk:schematic>  Rtest=42  freq=1 GHz
+
+
+SP Sweep1[1].SP1[43/100] <ECE382M:LNA_wrk:schematic>  Rtest=43  freq=1 GHz
+
+
+SP Sweep1[1].SP1[44/100] <ECE382M:LNA_wrk:schematic>  Rtest=44  freq=1 GHz
+
+
+SP Sweep1[1].SP1[45/100] <ECE382M:LNA_wrk:schematic>  Rtest=45  freq=1 GHz
+
+
+SP Sweep1[1].SP1[46/100] <ECE382M:LNA_wrk:schematic>  Rtest=46  freq=1 GHz
+
+
+SP Sweep1[1].SP1[47/100] <ECE382M:LNA_wrk:schematic>  Rtest=47  freq=1 GHz
+
+
+SP Sweep1[1].SP1[48/100] <ECE382M:LNA_wrk:schematic>  Rtest=48  freq=1 GHz
+
+
+SP Sweep1[1].SP1[49/100] <ECE382M:LNA_wrk:schematic>  Rtest=49  freq=1 GHz
+
+
+SP Sweep1[1].SP1[50/100] <ECE382M:LNA_wrk:schematic>  Rtest=50  freq=1 GHz
+
+
+SP Sweep1[1].SP1[51/100] <ECE382M:LNA_wrk:schematic>  Rtest=51  freq=1 GHz
+
+
+SP Sweep1[1].SP1[52/100] <ECE382M:LNA_wrk:schematic>  Rtest=52  freq=1 GHz
+
+
+SP Sweep1[1].SP1[53/100] <ECE382M:LNA_wrk:schematic>  Rtest=53  freq=1 GHz
+
+
+SP Sweep1[1].SP1[54/100] <ECE382M:LNA_wrk:schematic>  Rtest=54  freq=1 GHz
+
+
+SP Sweep1[1].SP1[55/100] <ECE382M:LNA_wrk:schematic>  Rtest=55  freq=1 GHz
+
+
+SP Sweep1[1].SP1[56/100] <ECE382M:LNA_wrk:schematic>  Rtest=56  freq=1 GHz
+
+
+SP Sweep1[1].SP1[57/100] <ECE382M:LNA_wrk:schematic>  Rtest=57  freq=1 GHz
+
+
+SP Sweep1[1].SP1[58/100] <ECE382M:LNA_wrk:schematic>  Rtest=58  freq=1 GHz
+
+
+SP Sweep1[1].SP1[59/100] <ECE382M:LNA_wrk:schematic>  Rtest=59  freq=1 GHz
+
+
+SP Sweep1[1].SP1[60/100] <ECE382M:LNA_wrk:schematic>  Rtest=60  freq=1 GHz
+
+
+SP Sweep1[1].SP1[61/100] <ECE382M:LNA_wrk:schematic>  Rtest=61  freq=1 GHz
+
+
+SP Sweep1[1].SP1[62/100] <ECE382M:LNA_wrk:schematic>  Rtest=62  freq=1 GHz
+
+
+SP Sweep1[1].SP1[63/100] <ECE382M:LNA_wrk:schematic>  Rtest=63  freq=1 GHz
+
+
+SP Sweep1[1].SP1[64/100] <ECE382M:LNA_wrk:schematic>  Rtest=64  freq=1 GHz
+
+
+SP Sweep1[1].SP1[65/100] <ECE382M:LNA_wrk:schematic>  Rtest=65  freq=1 GHz
+
+
+SP Sweep1[1].SP1[66/100] <ECE382M:LNA_wrk:schematic>  Rtest=66  freq=1 GHz
+
+
+SP Sweep1[1].SP1[67/100] <ECE382M:LNA_wrk:schematic>  Rtest=67  freq=1 GHz
+
+
+SP Sweep1[1].SP1[68/100] <ECE382M:LNA_wrk:schematic>  Rtest=68  freq=1 GHz
+
+
+SP Sweep1[1].SP1[69/100] <ECE382M:LNA_wrk:schematic>  Rtest=69  freq=1 GHz
+
+
+SP Sweep1[1].SP1[70/100] <ECE382M:LNA_wrk:schematic>  Rtest=70  freq=1 GHz
+
+
+SP Sweep1[1].SP1[71/100] <ECE382M:LNA_wrk:schematic>  Rtest=71  freq=1 GHz
+
+
+SP Sweep1[1].SP1[72/100] <ECE382M:LNA_wrk:schematic>  Rtest=72  freq=1 GHz
+
+
+SP Sweep1[1].SP1[73/100] <ECE382M:LNA_wrk:schematic>  Rtest=73  freq=1 GHz
+
+
+SP Sweep1[1].SP1[74/100] <ECE382M:LNA_wrk:schematic>  Rtest=74  freq=1 GHz
+
+
+SP Sweep1[1].SP1[75/100] <ECE382M:LNA_wrk:schematic>  Rtest=75  freq=1 GHz
+
+
+SP Sweep1[1].SP1[76/100] <ECE382M:LNA_wrk:schematic>  Rtest=76  freq=1 GHz
+
+
+SP Sweep1[1].SP1[77/100] <ECE382M:LNA_wrk:schematic>  Rtest=77  freq=1 GHz
+
+
+SP Sweep1[1].SP1[78/100] <ECE382M:LNA_wrk:schematic>  Rtest=78  freq=1 GHz
+
+
+SP Sweep1[1].SP1[79/100] <ECE382M:LNA_wrk:schematic>  Rtest=79  freq=1 GHz
+
+
+SP Sweep1[1].SP1[80/100] <ECE382M:LNA_wrk:schematic>  Rtest=80  freq=1 GHz
+
+
+SP Sweep1[1].SP1[81/100] <ECE382M:LNA_wrk:schematic>  Rtest=81  freq=1 GHz
+
+
+SP Sweep1[1].SP1[82/100] <ECE382M:LNA_wrk:schematic>  Rtest=82  freq=1 GHz
+
+
+SP Sweep1[1].SP1[83/100] <ECE382M:LNA_wrk:schematic>  Rtest=83  freq=1 GHz
+
+
+SP Sweep1[1].SP1[84/100] <ECE382M:LNA_wrk:schematic>  Rtest=84  freq=1 GHz
+
+
+SP Sweep1[1].SP1[85/100] <ECE382M:LNA_wrk:schematic>  Rtest=85  freq=1 GHz
+
+
+SP Sweep1[1].SP1[86/100] <ECE382M:LNA_wrk:schematic>  Rtest=86  freq=1 GHz
+
+
+SP Sweep1[1].SP1[87/100] <ECE382M:LNA_wrk:schematic>  Rtest=87  freq=1 GHz
+
+
+SP Sweep1[1].SP1[88/100] <ECE382M:LNA_wrk:schematic>  Rtest=88  freq=1 GHz
+
+
+SP Sweep1[1].SP1[89/100] <ECE382M:LNA_wrk:schematic>  Rtest=89  freq=1 GHz
+
+
+SP Sweep1[1].SP1[90/100] <ECE382M:LNA_wrk:schematic>  Rtest=90  freq=1 GHz
+
+
+SP Sweep1[1].SP1[91/100] <ECE382M:LNA_wrk:schematic>  Rtest=91  freq=1 GHz
+
+
+SP Sweep1[1].SP1[92/100] <ECE382M:LNA_wrk:schematic>  Rtest=92  freq=1 GHz
+
+
+SP Sweep1[1].SP1[93/100] <ECE382M:LNA_wrk:schematic>  Rtest=93  freq=1 GHz
+
+
+SP Sweep1[1].SP1[94/100] <ECE382M:LNA_wrk:schematic>  Rtest=94  freq=1 GHz
+
+
+SP Sweep1[1].SP1[95/100] <ECE382M:LNA_wrk:schematic>  Rtest=95  freq=1 GHz
+
+
+SP Sweep1[1].SP1[96/100] <ECE382M:LNA_wrk:schematic>  Rtest=96  freq=1 GHz
+
+
+SP Sweep1[1].SP1[97/100] <ECE382M:LNA_wrk:schematic>  Rtest=97  freq=1 GHz
+
+
+SP Sweep1[1].SP1[98/100] <ECE382M:LNA_wrk:schematic>  Rtest=98  freq=1 GHz
+
+
+SP Sweep1[1].SP1[99/100] <ECE382M:LNA_wrk:schematic>  Rtest=99  freq=1 GHz
+
+
+SP Sweep1[1].SP1[100/100] <ECE382M:LNA_wrk:schematic>  Rtest=100  freq=1 GHz
+
+Warning detected by hpeesofsim during circuit set up.
+    Unable to resolve variable(s) or functions(s) in expression ` gain = (Voutp-Voutn)/Vin'
+        Vin
+        Voutn
+        Voutp
+
+Warning detected by hpeesofsim during circuit set up.
+    Unable to resolve variable(s) or functions(s) in expression `alpha = Voutp/FBP'
+        FBP
+        Voutp
 
 
 Resource usage:
-  Total stopwatch time     =     0.52 seconds.
+  Total stopwatch time     =     0.63 seconds.
 
