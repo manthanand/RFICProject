@@ -14,7 +14,7 @@ INDQ_Z:L5  Vdd Voutp L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz
 V_Source:SRC3  FBN 0 Type="V_DC" Vdc=vb V SaveCurrent=1 
 
 width=50 tune{ 1 to 80 by 0.1 } opt{ 1 to 40 }
-Rdrain=1000 tune{ 0 to 10000 by 1000 } opt{ 1 to 40 }
+Rdrain=600 tune{ 0 to 10000 by 100 } opt{ 1 to 40 }
 Rtest=8 tune{ 0 to 25 by 1 } opt{ 1 to 40 }
 vdd=1 tune{ 0 to 2.5 by 0.1 } opt{ 1 to 40 }
 numcas=19 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
@@ -27,6 +27,20 @@ Lsource=0.7 tune{ 0 to 10 by 0.1 }
 num=12 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
 R:R7  Vinp N__7 R=Rtest Ohm Noise=yes 
 V_Source:SRC1  Vdd 0 Type="V_DC" Vdc=vdd V SaveCurrent=1 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 SPSS_WSP=yes \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=1.0 GHz Stop=10 GHz Step=.1 GHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
 AC:AC1 CalcNoise=no SortNoise=0 IncludePortNoise=yes BandwidthForNoise=1 Hz FreqConversion=no UseFiniteDiff=no StatusLevel=2 OutputBudgetIV=no DevOpPtLevel=0 \
 SweepVar="freq" SweepPlan="AC1_stim" OutputPlan="AC1_Output" 
 
