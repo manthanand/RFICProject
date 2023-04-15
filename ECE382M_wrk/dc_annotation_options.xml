@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dc_annotation_options>
- <options view="schematic" UseFirstSweep="false" library="ECE382M" SweepPoint="freq=1e+09" ToggleCurrent="true" analysis="AC1" SolutionFile="annotation_1.xml" cell="LNA_wrk" ToggleVoltage="true"/>
+ <options ToggleVoltage="true" analysis="AC1" SolutionFile="annotation_1.xml" library="ECE382M" SweepPoint="freq=1e+09" view="schematic" cell="LNA_wrk" UseFirstSweep="false" ToggleCurrent="true"/>
 </dc_annotation_options>

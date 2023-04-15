@@ -6,68 +6,63 @@ Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE38
 #define inc_ECE382M_3aLNA__wrk_3aschematic__130nm__bulk_2enet 1
 #include "C:\Users\manth\Github\RFICProject\ECE382M_wrk\130nm_bulk.net"
 #endif
-C:C4  Voutn Vdd C=Cdrain F notune{ 10 fF to 1000 fF by 2.1 fF } 
-aele gain = (Voutp-Voutn)/Vin;alpha = Voutp/FBP;
+aele gain = (Voutp-Voutn)/Vin;
 #uselib "ckt" , "INDQ_Z"
 INDQ_Z:L8  Vdd Voutn L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz notune{ 1.875 GHz to 5.625 GHz by 0.375 GHz } Mode=1 Rdc=0.0 Ohm 
 #uselib "ckt" , "INDQ_Z"
 INDQ_Z:L5  Vdd Voutp L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz notune{ 1.875 GHz to 5.625 GHz by 0.375 GHz } Mode=1 Rdc=0.0 Ohm 
-V_Source:SRC8  FBN 0 Type="V_DC" Vdc=2 V SaveCurrent=1 
-C:C2  Voutp Vdd C=Cdrain F notune{ 10 fF to 1000 fF by 2.1 fF } 
+V_Source:SRC3  FBN 0 Type="V_DC" Vdc=vb V SaveCurrent=1 
 
-width=22 tune{ 1 to 40 by 0.1 } opt{ 1 to 30 }
-Rtest=10 tune{ 1 to 40 by 0.1 } opt{ 1 to 30 }
-ctop=19f tune{ 1 to 1000 by 1 } opt{ 1f to 1000f }
-cbot=1f tune{ 1 to 1000 by 1 } opt{ 1f to 1000f }
-Ldrain=7.5 notune{ 0 to 20 by 0.5 }
-Cdrain=150 f notune{ 5 f to 300 f by 10 f }
-Rdrain=2110 notune{ 500 to 10000 by 500 }
-Lsource=2.5 notune{ 0 to 7.5 by 0.5 }
-num=15 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
-Port:TermG1  N__4 0 Num=1 Z=50 Ohm Noise=yes 
-V_Source:SRC4  Vdd 0 Type="V_DC" Vdc=2.5 V SaveCurrent=1 
-S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz Freq=1.0 GHz DevOpPtLevel=0 SPSS_WSP=yes \
-OutputPlan="SP1_Output" 
+width=50 tune{ 1 to 80 by 0.1 } opt{ 1 to 40 }
+Rdrain=1000 tune{ 0 to 10000 by 1000 } opt{ 1 to 40 }
+Rtest=8 tune{ 0 to 25 by 1 } opt{ 1 to 40 }
+vdd=1 tune{ 0 to 2.5 by 0.1 } opt{ 1 to 40 }
+numcas=19 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
+wcas=22 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
+lencas=130 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
+vb=0.8 tune{ 0 to 2.5 by 0.05 }
+len=294 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
+Ldrain=9.3 tune{ 0 to 10 by 0.5 } noopt{ 0 to 10 }
+Lsource=0.7 tune{ 0 to 10 by 0.1 }
+num=12 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
+R:R7  Vinp N__7 R=Rtest Ohm Noise=yes 
+V_Source:SRC1  Vdd 0 Type="V_DC" Vdc=vdd V SaveCurrent=1 
+AC:AC1 CalcNoise=no SortNoise=0 IncludePortNoise=yes BandwidthForNoise=1 Hz FreqConversion=no UseFiniteDiff=no StatusLevel=2 OutputBudgetIV=no DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="AC1_stim" OutputPlan="AC1_Output" 
 
-OutputPlan:SP1_Output \
+SweepPlan: AC1_stim Start=1.0 GHz Stop=10 GHz Step=.10 GHz 
+
+OutputPlan:AC1_Output \
       Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
       UseEquationNestLevel=yes \
       EquationNestLevel=2 \
       UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2
+      SavedEquationNestLevel=2 \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
 
-#load "python","LinearCollapse"
-Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
-#uselib "ckt" , "tf"
-tf:TF1  N__4 N__1 0 N__10 T=1.414 
-"nmos":MOSFET4  Voutp FBP N__14 0 Length=130 nm Width=width um Mode=1 Noise=yes _M=num 
-R:R3  Vdd Voutp R=Rdrain Ohm notune{ 0 Ohm to 10000 Ohm by 100 Ohm } Noise=yes 
-C:C6  0 FBP C=cbot F 
+"nmos":MOSFET4  N__21 FBP N__7 0 Length=len nm Width=width um Mode=1 Noise=yes _M=num 
 #uselib "ckt" , "INDQ_Z"
-INDQ_Z:L7  N__19 0 L=Lsource nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz Mode=1 Rdc=0.0 Ohm 
-"nmos":MOSFET2  Voutn FBN N__19 0 Length=130 nm Width=width um Mode=1 Noise=yes _M=num 
-R:R5  Vdd Voutn R=Rdrain Ohm notune{ 0 Ohm to 10000 Ohm by 100 Ohm } Noise=yes 
+INDQ_Z:L7  N__15 0 L=Lsource nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz Mode=1 Rdc=0.0 Ohm 
+"nmos":MOSFET2  N__13 FBN N__15 0 Length=len nm Width=width um Mode=1 Noise=yes _M=num 
 #uselib "ckt" , "INDQ_Z"
-INDQ_Z:L6  N__14 0 L=Lsource nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz Mode=1 Rdc=0.0 Ohm 
-C:C5  FBP Voutp C=ctop F 
-V_Source:SRC7  FBP 0 Type="V_DC" Vdc=2 V SaveCurrent=1 
-R:R6  Vdd B1 R=50 kOhm Noise=yes 
-R:R7  B1 0 R=200 kOhm Noise=yes 
-R:R8  Vdd B2 R=50 kOhm Noise=yes 
-R:R9  B2 0 R=200 kOhm Noise=yes 
-
-Optim:"Optim1" OptimType="DFP" ErrorForm="L2" SAProgressReport=0 MaxIters=100 P=2 DesiredError=0.0 StatusLevel=4 FinalAnalysis="None" NormalizeGoals=yes SetBestValues=yes SaveSolns=yes SaveGoals=yes SaveOptimVars=no UpdateDataset=yes SaveNominal=no SaveAllIterations=no UseAllOptVars=yes UseAllGoals=yes SaveCurrentEF=no InitialTempControlMode=0 SANumTrialsPerIter=10 NumShootsPerIter=20 SATempControlAlpha=0.8 EnableCockpit=yes NormalizeError=yes SaveAllTrials=no UseAdvTermCriteria=no CostRelativeTol=1.0e-8 LimitOfContSmallImprovement=5 
-
-OptimGoal:OptimGoal1 Expr="dB(S(1,1))" SimInstanceName="SP1" Weight=1.0 \
-IndepVar[1]="freq" \
-SpecLimitLine[1]="OptimGoal1_limit1" 
-SpecLimitLine:"OptimGoal1_limit1" Type="LessThan" Max=10 Weight=1.0 \
-IndepVar[1]="freq" IndepMin[1]=2.35G IndepMax[1]=5.05G 
-C:C7  0 FBN C=cbot F 
-C:C8  FBN Voutn C=ctop F 
-R:R10  N__1 0 R=Rtest Ohm Noise=yes 
-R:R11  N__10 0 R=Rtest Ohm Noise=yes 
-ParamSweep:Sweep1 SimInstanceName[1]="SP1" StatusLevel=2 SweepVar="Rtest" SweepPlan="Sweep1_stim" 
-
-SweepPlan: Sweep1_stim Start=1 Stop=100 Step=1 
-
+INDQ_Z:L6  N__7 0 L=Lsource nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz Mode=1 Rdc=0.0 Ohm 
+"nmos":MOSFET5  Voutn Vdd N__13 0 Length=lencas nm Width=wcas um Mode=1 Noise=yes _M=numcas 
+"nmos":MOSFET6  Voutp Vdd N__21 0 Length=lencas nm Width=wcas um Mode=1 Noise=yes _M=numcas 
+R:R8  Vinn N__15 R=Rtest Ohm Noise=yes 
+V_Source:SRC2  FBP 0 Type="V_DC" Vdc=vb V SaveCurrent=1 
+V_Source:SRC4  Vin 0 Type="V_AC" Vdc=0.0 V Vac=polar(1,0) V Freq=freq V_Noise=0 uV SaveCurrent=1 
+Port:Term1  N__6 Vin Num=1 Z=50 Ohm Noise=yes 
+#uselib "ckt" , "Balun3Port"
+Balun3Port:CMP1  N__6 Vinp Vinn 
+R:R9  Vdd Voutp R=Rdrain Ohm Noise=yes 
+R:R10  Vdd Voutn R=Rdrain Ohm Noise=yes 

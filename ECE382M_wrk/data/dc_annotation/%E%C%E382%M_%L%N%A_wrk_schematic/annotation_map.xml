@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<annotation_files Time="Wed Apr 12 10:50:27 2023" Simulator="hpeesofsim" Version="1.0">
+<annotation_files Version="1.0" Time="Sat Apr 15 12:38:25 2023" Simulator="hpeesofsim">
  <File name="annotation_1.xml">
-  <Controller name="SP1">
-   <P>Rtest: 1.0000000000000000e+00</P>
+  <Controller name="AC1">
    <P>freq: 1.0000000000000000e+09</P>
   </Controller>
  </File>
