@@ -2,7 +2,7 @@
 <DCOPData Simulator="hpeesofsim" Version="1.0" Time="Fri Apr 14 12:45:42 2023">
  <Controller name="HB3">
   <SweepCondition>
-   <P>RFfreq: 1.0000000000000000e+00</P>
+   <P>RFfreq: 5.0000000000000000e+00</P>
   </SweepCondition>
   <DC_OPDeclaration>
    <model name="R">

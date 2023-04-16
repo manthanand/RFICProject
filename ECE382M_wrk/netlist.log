@@ -21,9 +21,9 @@ numcas=19 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
 wcas=22 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
 lencas=130 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
 vb=0.8 tune{ 0 to 2.5 by 0.05 }
-len=294 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
-Ldrain=9.3 tune{ 0 to 10 by 0.5 } noopt{ 0 to 10 }
-Lsource=0.7 tune{ 0 to 10 by 0.1 }
+len=170 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
+Ldrain=8.8 tune{ 0 to 10 by 0.5 } noopt{ 0 to 10 }
+Lsource=1.2 tune{ 0 to 10 by 0.1 }
 num=12 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
 R:R7  Vinp N__7 R=Rtest Ohm Noise=yes 
 V_Source:SRC1  Vdd 0 Type="V_DC" Vdc=vdd V SaveCurrent=1 
