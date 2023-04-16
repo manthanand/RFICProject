@@ -1,4 +1,4 @@
-﻿<ADSWorkspace Revision="9" Version="100">
+﻿<ADSWorkspace Revision="10" Version="100">
     <Workspace Name="">
         <WrkAel Name="spice.ael" />
         <LibraryDefs Name="lib.defs" />
@@ -48,38 +48,23 @@
         <Data_Files Name="dc_annotation\%E%C%E382%M_%L%N%A_wrk_schematic\annotation_map.xml" />
         <Data_Files Name="LNA_wrk.ds" />
         <Data_Files Name="LNA_wrk_data\logFile.txt" />
-        <Library Name="1xEV" />
-        <Library Name="3GPPFDD" />
-        <Library Name="3GPPFDD_10_99" />
-        <Library Name="Antennas_and_Propagation" />
-        <Library Name="CDMA" />
-        <Library Name="cdma2000" />
-        <Library Name="Circuit_Cosimulation" />
-        <Library Name="CMMB" />
-        <Library Name="Controllers" />
-        <Library Name="DTMB" />
-        <Library Name="DTV" />
-        <Library Name="EDGE" />
-        <Library Name="GSM" />
-        <Library Name="HDL_Blocks" />
-        <Library Name="HSDPA" />
-        <Library Name="HSUPA" />
-        <Library Name="Instruments" />
-        <Library Name="Interactive_Controls_and_Displays" />
-        <Library Name="LTE" />
-        <Library Name="Numeric" />
-        <Library Name="Obsolete" />
-        <Library Name="Signal_Converters" />
-        <Library Name="Simulation_Sequencing" />
-        <Library Name="Sinks" />
-        <Library Name="SystemVue_Cosimulation" />
-        <Library Name="TDSCDMA" />
-        <Library Name="Timed" />
-        <Library Name="UMB" />
-        <Library Name="UWB" />
-        <Library Name="WLAN" />
-        <Library Name="WLAN_11n" />
-        <Library Name="WMAN" />
-        <Library Name="WMAN_16e" />
+        <Dataset Name="mixer.ds" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_%Testbench_schematic\annotation_1.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_%Testbench_schematic\annotation_map.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_1.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_10.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_2.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_3.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_4.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_5.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_6.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_7.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_8.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_9.xml" />
+        <Data_Files Name="dc_annotation\%E%C%E382%M_mixer_schematic\annotation_map.xml" />
+        <Data_Files Name="mixer.ds" />
+        <Data_Files Name="mixer_data\logFile.txt" />
+        <Data_Files Name="Testbench_data\logFile.txt" />
+        <Cell Name="ECE382M:mixer" />
     </Workspace>
 </ADSWorkspace>
