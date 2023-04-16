@@ -1,7 +1,8 @@
 <!DOCTYPE SaveWorkspaceState>
 <SaveWorkspaceState>
     <Windows>
-        <Schematic cell="Testbench" x1="-1" lib="ECE382M" y1="-6" width="1920" geom="1,0,2,167,43,1078,825,1920,1080" view="schematic" height="1010"/>
+        <Schematic view="schematic" width="1920" cell="Testbench" geom="1,0,2,1331,103,1078,825,1920,1080" lib="ECE382M" y1="-6" height="1010" x1="-1"/>
+        <DDS name="Testbench.dds"/>
     </Windows>
     <MainWindowTab tab="1"/>
 </SaveWorkspaceState>

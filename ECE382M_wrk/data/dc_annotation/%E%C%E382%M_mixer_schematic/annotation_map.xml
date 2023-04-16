@@ -1,8 +1,458 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<annotation_files Simulator="hpeesofsim" Version="1.0" Time="Sun Apr 16 01:01:31 2023">
+<?xml version='1.0' encoding='UTF-8'?>
+<annotation_files Version="1.0" Time="Sun Apr 16 11:08:21 2023" Simulator="hpeesofsim">
  <File name="annotation_1.xml">
-  <Controller name="SP1">
-   <P>freq: 1.0000000000000000e+09</P>
+  <Controller name="HB3">
+   <P>RFfreq: 1.0000000000000000e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_2.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.1000000000000001e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_3.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.2000000000000002e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_4.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.3000000000000003e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_5.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.4000000000000004e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_6.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.5000000000000004e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_7.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.6000000000000005e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_8.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.7000000000000006e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_9.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.8000000000000007e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_10.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.9000000000000008e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_11.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.0000000000000009e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_12.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.1000000000000010e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_13.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.2000000000000011e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_14.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.3000000000000012e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_15.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.4000000000000012e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_16.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.5000000000000013e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_17.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.6000000000000014e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_18.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.7000000000000015e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_19.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.8000000000000016e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_20.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.9000000000000017e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_21.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.0000000000000018e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_22.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.1000000000000019e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_23.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.2000000000000020e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_24.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.3000000000000020e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_25.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.4000000000000021e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_26.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.5000000000000022e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_27.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.6000000000000023e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_28.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.7000000000000024e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_29.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.8000000000000025e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_30.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.9000000000000026e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_31.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.0000000000000027e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_32.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.1000000000000023e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_33.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.2000000000000020e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_34.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.3000000000000016e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_35.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.4000000000000012e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_36.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.5000000000000009e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_37.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.6000000000000005e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_38.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.7000000000000002e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_39.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.7999999999999998e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_40.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.8999999999999995e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_41.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.9999999999999991e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_42.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.0999999999999988e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_43.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.1999999999999984e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_44.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.2999999999999980e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_45.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.3999999999999977e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_46.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.4999999999999973e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_47.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.5999999999999970e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_48.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.6999999999999966e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_49.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.7999999999999963e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_50.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.8999999999999959e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_51.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.9999999999999956e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_52.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.0999999999999952e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_53.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.1999999999999948e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_54.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.2999999999999945e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_55.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.3999999999999941e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_56.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.4999999999999938e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_57.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.5999999999999934e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_58.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.6999999999999931e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_59.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.7999999999999927e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_60.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.8999999999999924e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_61.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.9999999999999920e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_62.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.0999999999999917e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_63.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.1999999999999913e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_64.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.2999999999999909e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_65.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.3999999999999906e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_66.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.4999999999999902e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_67.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.5999999999999899e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_68.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.6999999999999895e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_69.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.7999999999999892e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_70.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.8999999999999888e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_71.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.9999999999999885e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_72.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.0999999999999890e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_73.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.1999999999999886e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_74.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.2999999999999883e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_75.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.3999999999999879e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_76.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.4999999999999876e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_77.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.5999999999999872e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_78.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.6999999999999869e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_79.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.7999999999999865e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_80.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.8999999999999861e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_81.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.9999999999999858e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_82.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 9.0999999999999854e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_83.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 9.1999999999999851e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_84.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 9.2999999999999847e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_85.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 9.3999999999999844e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_86.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 9.4999999999999840e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_87.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 9.5999999999999837e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_88.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 9.6999999999999833e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_89.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 9.7999999999999829e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_90.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 9.8999999999999826e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_91.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.0000000000000000e+01</P>
   </Controller>
  </File>
 </annotation_files>

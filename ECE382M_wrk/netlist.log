@@ -75,20 +75,6 @@ aele CG_linear=mag(mix(HB.Vout,{-1,1})/mix(HB.vin,{0,1}));CG_linear_p=mag(mix(HB
 width=26.074 tune{ 0.1 to 100 by 1 }
 turns=3.07e-06 tune{ 1e-06 to 1e-05 by 1e-06 }
 load=9338 tune{ 100 to 10000 by 100 }
-S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 SPSS_WSP=yes \
-SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
-
-SweepPlan: SP1_stim Start=1.0 GHz Stop=10.0 GHz Step=.1 GHz 
-
-OutputPlan:SP1_Output \
-      Type="Output" \
-      UseEquationNestLevel=yes \
-      EquationNestLevel=2 \
-      UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2
-
-#load "python","LinearCollapse"
-Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
 end mixer
 
 V_Source:SRC1  N__17 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
@@ -101,25 +87,45 @@ IFfreq=0.05
 df=0.01
 LOfreq=RFfreq-IFfreq
 RFpower=-50
-S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=1 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 SPSS_WSP=yes \
-SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
-
-SweepPlan: SP1_stim Start=1.0 GHz Stop=10 GHz Step=.1 GHz 
-
-OutputPlan:SP1_Output \
-      Type="Output" \
-      UseEquationNestLevel=yes \
-      EquationNestLevel=2 \
-      UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2
-
-#load "python","LinearCollapse"
-Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+Port:PORT1  N__12 0 Num=1 Z=50 P[1]=dbmtow(RFpower) Freq[1]=RFfreq GHz    Noise=yes 
 aele CG_linear=mag(mix(HB.Vout,{1,-1})/mix(HB.vin,{0,1}));CG_linear_p=mag(mix(HB.Vout2,{1,-1})/mix(HB.vin,{0,1}));CG_linear_n=mag(mix(HB.Vout1,{1,-1})/mix(HB.vin,{0,1}));CG_dB=20*log(CG_linear);CG_dB_p=20*log(CG_linear_p);CG_dB_n=20*log(CG_linear_n);
 #uselib "ckt" , "Balun3Port"
 Balun3Port:CMP1  Vout Vout1 Vout2 
 Port:Term2  Vout 0 Num=2 Z=100 kOhm Noise=yes 
-Port:Term1  N__12 0 Num=1 Z=50 Ohm Noise=yes 
+HB:HB3 MaxOrder=5 Freq[1]=LOfreq GHz Freq[2]=RFfreq GHz Order[1]=7 Order[2]=3 StatusLevel=2 FundOversample=1 \
+Restart=no OutputBudgetIV=no \
+HBSS_WSP=0 SweepVar="RFpower" SweepPlan="HB3_stim" OutputPlan="HB3_Output" UseKrylov=0 SamanskiiConstant=2 \
+
+
+SweepPlan: HB3_stim Start=-50 Stop=-20 Step=2 
+
+OutputPlan:HB3_Output \
+      Type="Output" \
+      UseNodeNestLevel=yes \
+      NodeNestLevel=2 \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2 \
+      SavedEquationName[1]="IFfreq" \
+      SavedEquationName[2]="LOfreq" \
+      SavedEquationName[3]="Rload" \
+      UseDeviceCurrentNestLevel=no \
+      DeviceCurrentNestLevel=0 \
+      DeviceCurrentDeviceType="All" \
+      DeviceCurrentSymSyntax=yes \
+      UseCurrentNestLevel=yes \
+      CurrentNestLevel=999 \
+      UseDeviceVoltageNestLevel=no \
+      DeviceVoltageNestLevel=0 \
+      DeviceVoltageDeviceType="All"
+
+Tran:HB3_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
+Freq[1]=LOfreq GHz Order[1]=7 
+
+Component:tahb_HB3 Module="ATAHB" Type="ModelExtractor" \ 
+ Tran_Analysis="HB3_tran" HB_Analysis="HB3" 
+
 Short:DC_Block2  N__12 vin Mode=1 
 V_Source:SRC3  N__23 0 Type="V_DC" Vdc=1 V SaveCurrent=1 
 V_Source:SRC6  N__27 0 Type="V_1Tone" V[1]=polar(1.2,90) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
