@@ -1,52 +1,24 @@
-; Top Design: "ECE382M:LNA_wrk:schematic"
+; Top Design: "ECE382M:mixer:schematic"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE382M:LNA_wrk:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=4
-#ifndef inc_ECE382M_3aLNA__wrk_3aschematic__130nm__bulk_2enet
-#define inc_ECE382M_3aLNA__wrk_3aschematic__130nm__bulk_2enet 1
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE382M:mixer:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=yes DcopOutputDcopType=2
+#ifndef inc_ECE382M_3amixer_3aschematic__130nm__bulk_2enet
+#define inc_ECE382M_3amixer_3aschematic__130nm__bulk_2enet 1
 #include "C:\Users\manth\Github\RFICProject\ECE382M_wrk\130nm_bulk.net"
 #endif
-aele gain = (Voutp-Voutn)/Vin;
-#uselib "ckt" , "INDQ_Z"
-INDQ_Z:L8  Vdd Voutn L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz notune{ 1.875 GHz to 5.625 GHz by 0.375 GHz } Mode=1 Rdc=0.0 Ohm 
-#uselib "ckt" , "INDQ_Z"
-INDQ_Z:L5  Vdd Voutp L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz notune{ 1.875 GHz to 5.625 GHz by 0.375 GHz } Mode=1 Rdc=0.0 Ohm 
-V_Source:SRC3  FBN 0 Type="V_DC" Vdc=vb V SaveCurrent=1 
+V_Source:SRC4  Vdd 0 Type="V_DC" Vdc=1.2 V Vac=0 SaveCurrent=1 
+R:R2  Vout2 Vdd R=load Ohm Noise=yes 
+R:R1  Vout1 Vdd R=load Ohm Noise=yes 
+"nmos":MOSFET2  Vout1 N__1 vin1 0 Length=130 nm Width=width um Mode=1 Noise=yes 
+"nmos":MOSFET4  Vout2 N__10 vin1 0 Length=130 nm Width=width um Mode=1 Noise=yes 
+"nmos":MOSFET1  Vout1 N__12 vin2 0 Length=130 nm Width=width um Mode=1 Noise=yes 
+"nmos":MOSFET3  Vout2 N__1 vin2 0 Length=130 nm Width=width um Mode=1 Noise=yes 
+HB:HB3 MaxOrder=5 Freq[1]=LOfreq GHz Freq[2]=RFfreq GHz Order[1]=3 Order[2]=3 StatusLevel=2 FundOversample=1 \
+Restart=no OutputBudgetIV=no HBSS_WSP=0 SweepVar="RFfreq" SweepPlan="HB3_stim" OutputPlan="HB3_Output" UseKrylov=yes 
 
-width=50 tune{ 1 to 80 by 0.1 } opt{ 1 to 40 }
-Rdrain=600 tune{ 0 to 10000 by 100 } opt{ 1 to 40 }
-Rtest=8 tune{ 0 to 25 by 1 } opt{ 1 to 40 }
-vdd=1 tune{ 0 to 2.5 by 0.1 } opt{ 1 to 40 }
-numcas=19 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
-wcas=22 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
-lencas=130 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
-vb=0.8 tune{ 0 to 2.5 by 0.05 }
-len=170 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
-Ldrain=8.8 tune{ 0 to 10 by 0.5 } noopt{ 0 to 10 }
-Lsource=1.2 tune{ 0 to 10 by 0.1 }
-num=12 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
-R:R7  Vinp N__7 R=Rtest Ohm Noise=yes 
-V_Source:SRC1  Vdd 0 Type="V_DC" Vdc=vdd V SaveCurrent=1 
-S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 SPSS_WSP=yes \
-SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+SweepPlan: HB3_stim Start=1 Stop=10 Step=1 
 
-SweepPlan: SP1_stim Start=1.0 GHz Stop=10 GHz Step=.1 GHz 
-
-OutputPlan:SP1_Output \
-      Type="Output" \
-      UseEquationNestLevel=yes \
-      EquationNestLevel=2 \
-      UseSavedEquationNestLevel=yes \
-      SavedEquationNestLevel=2
-
-#load "python","LinearCollapse"
-Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
-AC:AC1 CalcNoise=no SortNoise=0 IncludePortNoise=yes BandwidthForNoise=1 Hz FreqConversion=no UseFiniteDiff=no StatusLevel=2 OutputBudgetIV=no DevOpPtLevel=0 \
-SweepVar="freq" SweepPlan="AC1_stim" OutputPlan="AC1_Output" 
-
-SweepPlan: AC1_stim Start=1.0 GHz Stop=10 GHz Step=.10 GHz 
-
-OutputPlan:AC1_Output \
+OutputPlan:HB3_Output \
       Type="Output" \
       UseNodeNestLevel=yes \
       NodeNestLevel=2 \
@@ -54,6 +26,9 @@ OutputPlan:AC1_Output \
       EquationNestLevel=2 \
       UseSavedEquationNestLevel=yes \
       SavedEquationNestLevel=2 \
+      SavedEquationName[1]="IFfreq" \
+      SavedEquationName[2]="LOfreq" \
+      SavedEquationName[3]="Rload" \
       UseDeviceCurrentNestLevel=no \
       DeviceCurrentNestLevel=0 \
       DeviceCurrentDeviceType="All" \
@@ -64,19 +39,34 @@ OutputPlan:AC1_Output \
       DeviceVoltageNestLevel=0 \
       DeviceVoltageDeviceType="All"
 
-"nmos":MOSFET4  N__21 FBP N__7 0 Length=len nm Width=width um Mode=1 Noise=yes _M=num 
-#uselib "ckt" , "INDQ_Z"
-INDQ_Z:L7  N__15 0 L=Lsource nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz Mode=1 Rdc=0.0 Ohm 
-"nmos":MOSFET2  N__13 FBN N__15 0 Length=len nm Width=width um Mode=1 Noise=yes _M=num 
-#uselib "ckt" , "INDQ_Z"
-INDQ_Z:L6  N__7 0 L=Lsource nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz Mode=1 Rdc=0.0 Ohm 
-"nmos":MOSFET5  Voutn Vdd N__13 0 Length=lencas nm Width=wcas um Mode=1 Noise=yes _M=numcas 
-"nmos":MOSFET6  Voutp Vdd N__21 0 Length=lencas nm Width=wcas um Mode=1 Noise=yes _M=numcas 
-R:R8  Vinn N__15 R=Rtest Ohm Noise=yes 
-V_Source:SRC2  FBP 0 Type="V_DC" Vdc=vb V SaveCurrent=1 
-V_Source:SRC4  Vin 0 Type="V_AC" Vdc=0.0 V Vac=polar(1,0) V Freq=freq V_Noise=0 uV SaveCurrent=1 
-Port:Term1  N__6 Vin Num=1 Z=50 Ohm Noise=yes 
+Tran:HB3_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
+Freq[1]=LOfreq GHz Order[1]=3 
+
+Component:tahb_HB3 Module="ATAHB" Type="ModelExtractor" \ 
+ Tran_Analysis="HB3_tran" HB_Analysis="HB3" 
+
+C:C1  N__8 N__12 C=1.0 nF 
+C:C2  LOn N__1 C=1.0 nF 
+C:C3  LOp N__10 C=1.0 nF 
+#uselib "ckt" , "tf"
+tf:TF1  vin vin2 0 vin1 T=turns 
+Port:PORT1  N__7 0 Num=1 Z=50 P[1]=dbmtow(RFpower) Freq[1]=RFfreq GHz    Noise=yes 
+
+RFfreq=5
+IFfreq=0.05
+df=0.01
+LOfreq=RFfreq-IFfreq
+RFpower=-50
+aele CG_linear=mag(mix(HB.Vout,{-1,1})/mix(HB.vin,{0,1}));CG_linear_p=mag(mix(HB.Vout2,{-1,1})/mix(HB.vin,{0,1}));CG_linear_n=mag(mix(HB.Vout1,{-1,1})/mix(HB.vin,{0,1}));CG_dB=20*log(CG_linear);CG_dB_p=20*log(CG_linear_p);CG_dB_n=20*log(CG_linear_n);
 #uselib "ckt" , "Balun3Port"
-Balun3Port:CMP1  N__6 Vinp Vinn 
-R:R9  Vdd Voutp R=Rdrain Ohm Noise=yes 
-R:R10  Vdd Voutn R=Rdrain Ohm Noise=yes 
+Balun3Port:CMP1  Vout Vout1 Vout2 
+Port:Term2  Vout 0 Num=2 Z=100 kOhm Noise=yes 
+Short:DC_Block2  N__7 vin Mode=1 
+
+width=26.074 tune{ 0.1 to 100 by 1 }
+turns=3.07e-06 tune{ 1e-06 to 1e-05 by 1e-06 }
+load=9338 tune{ 100 to 10000 by 100 }
+Short:Term1  N__2 0 Mode=0 SaveCurrent=no
+V_Source:SRC8  N__8 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC9  LOn 0 Type="V_1Tone" V[1]=polar(1.2,180) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
+V_Source:SRC10  LOp 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 

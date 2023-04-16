@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<annotation_files Time="Sat Apr 15 19:15:50 2023" Version="1.0" Simulator="hpeesofsim">
+ <File name="annotation_1.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.0000000000000000e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_2.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 2.0000000000000000e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_3.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 3.0000000000000000e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_4.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 4.0000000000000000e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_5.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 5.0000000000000000e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_6.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 6.0000000000000000e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_7.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 7.0000000000000000e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_8.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 8.0000000000000000e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_9.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 9.0000000000000000e+00</P>
+  </Controller>
+ </File>
+ <File name="annotation_10.xml">
+  <Controller name="HB3">
+   <P>RFfreq: 1.0000000000000000e+01</P>
+  </Controller>
+ </File>
+</annotation_files>
