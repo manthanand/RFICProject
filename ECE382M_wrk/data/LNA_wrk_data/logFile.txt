@@ -3,13 +3,10 @@ hpeesofsim (*) 571.shp Nov  8 2022, MINT version 5
     (64-bit windows built: Wed Nov 09, 2022 05:38:21 +0000)
 
 
-***** Simulation started at Sat Apr 15 13:35:34 2023
+***** Simulation started at Sun Apr 16 10:45:50 2023
       Running on host: "DESKTOP-RR47J6M"
       In Directory: "C:\Users\manth\Github\RFICProject\ECE382M_wrk\data"
-      Process ID: 2644
-
-Warning detected by hpeesofsim in LinearCollapse '_2_' during analysis.
-    LinearCollapse is disabled because there is 'AC' analysis present.
+      Process ID: 24240
 
 Warning detected by hpeesofsim in MOSFET6 during circuit set up.
     Pd = 0 is less than W.
@@ -17,13 +14,11 @@ Warning detected by hpeesofsim in MOSFET6 during circuit set up.
 Warning detected by hpeesofsim in MOSFET6 during circuit set up.
     Ps = 0 is less than W.
 
-
-SP SP1[1] <ECE382M:LNA_wrk:schematic>   freq=(1 GHz->10 GHz)
-
+Pt DC convergence is used.
 
 AC AC1[1] <ECE382M:LNA_wrk:schematic>   freq=(1 GHz->10 GHz)
 
 
 Resource usage:
-  Total stopwatch time     =     0.64 seconds.
+  Total stopwatch time     =     0.46 seconds.
 
