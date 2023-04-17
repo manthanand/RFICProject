@@ -17,18 +17,18 @@ INDQ_Z:L8  Vdd Voutn L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz
 INDQ_Z:L5  Vdd Voutp L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz notune{ 1.875 GHz to 5.625 GHz by 0.375 GHz } Mode=1 Rdc=0.0 Ohm 
 V_Source:SRC3  N__17 0 Type="V_DC" Vdc=vb V SaveCurrent=1 
 
-width=26 tune{ 1 to 80 by 1 } opt{ 1 to 40 }
-cap=60 f tune{ 0.5 f to 10000 f by 10 f }
-Rdrain=100000 notune{ 0 to 100000 by 100 }  opt{ 1 to 40 }
-Rtest=9 tune{ 0 to 25 by 1 } opt{ 1 to 40 }
+width=18 tune{ 1 to 80 by 1 } opt{ 1 to 40 }
+cap=30 f tune{ 0.5 f to 10000 f by 10 f }
+Rdrain=100000 tune{ 0 to 100000 by 100 } opt{ 1 to 40 }
+Rtest=10 tune{ 0 to 25 by 1 } opt{ 1 to 40 }
 vdd=1 notune{ 0 to 2.5 by 0.1 }  opt{ 1 to 40 }
 numcas=20 notune{ 1 to 40 by 1 }  opt{ 1 to 40 }
 wcas=20 notune{ 1 to 40 by 1 }  opt{ 1 to 40 }
 lencas=130 notune{ 130 to 4000 by 10 }  opt{ 130 to 4000 }
-vb=1.3 tune{ 0 to 2.5 by 0.05 }
+vb=1.1 tune{ 0 to 2.5 by 0.05 }
 len=310 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
-Ldrain=6.5 tune{ 0 to 10 by 0.5 } noopt{ 0 to 10 }
-Lsource=1.7 tune{ 0 to 10 by 0.1 }
+Ldrain=9.3 tune{ 0 to 10 by 0.5 } noopt{ 0 to 10 }
+Lsource=0.7 tune{ 0 to 10 by 0.1 }
 num=15 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
 R:R7  Vinp N__8 R=Rtest Ohm Noise=yes 
 "nmos":MOSFET4  Voutp N__3 N__8 0 Length=len nm Width=width um Mode=1 Noise=yes _M=num 
@@ -62,7 +62,7 @@ R:R1  N__24 0 R=load Ohm Noise=yes
 R:R4  LOn N__19 R=200k Noise=yes 
 
 width=1 notune{ 0.1 to 100 by 1 }
-load=200 k notune{ 100 k to 10000 k by 100 k }
+load=200k notune{ 100 to 10000 by 100 }
 V_Source:SRC2  N__19 0 Type="V_DC" Vdc=300m SaveCurrent=1 
 Short:DC_Block4  N__25 Voutn Mode=1 
 Short:DC_Block3  N__24 Voutp Mode=1 
@@ -80,6 +80,20 @@ IFfreq=0.05
 df=0.01
 LOfreq=RFfreq-IFfreq
 RFpower=-50
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=1 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 SPSS_WSP=yes \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=1.0 GHz Stop=10 GHz Step=.1 GHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
 #uselib "ckt" , "Balun3Port"
 Balun3Port:CMP1  Vout Vout1 Vout2 
 HB:HB5 MaxOrder=9 Freq[1]=LOfreq GHz Freq[2]=(RFfreq+df/2) GHz Freq[3]=(RFfreq-df/2) GHz Order[1]=7 Order[2]=4 Order[3]=4 StatusLevel=4 FundOversample=1 \
