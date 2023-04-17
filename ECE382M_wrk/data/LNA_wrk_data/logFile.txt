@@ -3,22 +3,37 @@ hpeesofsim (*) 571.shp Nov  8 2022, MINT version 5
     (64-bit windows built: Wed Nov 09, 2022 05:38:21 +0000)
 
 
-***** Simulation started at Sun Apr 16 11:03:09 2023
+***** Simulation started at Sun Apr 16 22:01:34 2023
       Running on host: "DESKTOP-RR47J6M"
       In Directory: "C:\Users\manth\Github\RFICProject\ECE382M_wrk\data"
-      Process ID: 18856
+      Process ID: 2336
 
-Warning detected by hpeesofsim in MOSFET6 during circuit set up.
+Warning detected by hpeesofsim in LinearCollapse '_2_' during analysis.
+    LinearCollapse is disabled because there is 'AC' analysis present.
+
+Warning detected by hpeesofsim in MOSFET2 during circuit set up.
     Pd = 0 is less than W.
 
-Warning detected by hpeesofsim in MOSFET6 during circuit set up.
+Warning detected by hpeesofsim in MOSFET2 during circuit set up.
     Ps = 0 is less than W.
 
 Pt DC convergence is used.
+
+SP SP1[1] <ECE382M:LNA_wrk:schematic>   freq=(1 GHz->10 GHz)
+Warning detected by hpeesofsim during SP analysis `SP1'.
+    The global circuit temperature (25 C or 298.15 K) and the IEEE standard
+    noise temperature (16.85 C or 290 K) do not agree in the noise
+    analysis `SP1'.  As a result, the signal-to-noise ratio loss at the
+    the circuit temperature and the noise figure, defined and calculated
+    at the standard noise temperature, might not agree for a passive circuit
+    as well.  The `Temp' parameter on the `Options' item (25 C) can be set to
+    16.85 C to eliminate this discrepancy.
+
+
 
 AC AC1[1] <ECE382M:LNA_wrk:schematic>   freq=(1 GHz->10 GHz)
 
 
 Resource usage:
-  Total stopwatch time     =     1.16 seconds.
+  Total stopwatch time     =     6.28 seconds.
 
