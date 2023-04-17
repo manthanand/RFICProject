@@ -17,17 +17,18 @@ INDQ_Z:L8  Vdd Voutn L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz
 INDQ_Z:L5  Vdd Voutp L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz notune{ 1.875 GHz to 5.625 GHz by 0.375 GHz } Mode=1 Rdc=0.0 Ohm 
 V_Source:SRC3  N__17 0 Type="V_DC" Vdc=vb V SaveCurrent=1 
 
-width=17 tune{ 1 to 80 by 1 } opt{ 1 to 40 }
+width=26 tune{ 1 to 80 by 1 } opt{ 1 to 40 }
 cap=60 f tune{ 0.5 f to 10000 f by 10 f }
-Rtest=10 tune{ 0 to 25 by 1 } opt{ 1 to 40 }
+Rdrain=100000 notune{ 0 to 100000 by 100 }  opt{ 1 to 40 }
+Rtest=9 tune{ 0 to 25 by 1 } opt{ 1 to 40 }
 vdd=1 notune{ 0 to 2.5 by 0.1 }  opt{ 1 to 40 }
 numcas=20 notune{ 1 to 40 by 1 }  opt{ 1 to 40 }
 wcas=20 notune{ 1 to 40 by 1 }  opt{ 1 to 40 }
 lencas=130 notune{ 130 to 4000 by 10 }  opt{ 130 to 4000 }
-vb=1 tune{ 0 to 2.5 by 0.05 }
-len=190 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
-Ldrain=9 tune{ 0 to 10 by 0.5 } noopt{ 0 to 10 }
-Lsource=1 tune{ 0 to 10 by 0.1 }
+vb=1.3 tune{ 0 to 2.5 by 0.05 }
+len=310 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
+Ldrain=6.5 tune{ 0 to 10 by 0.5 } noopt{ 0 to 10 }
+Lsource=1.7 tune{ 0 to 10 by 0.1 }
 num=15 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
 R:R7  Vinp N__8 R=Rtest Ohm Noise=yes 
 "nmos":MOSFET4  Voutp N__3 N__8 0 Length=len nm Width=width um Mode=1 Noise=yes _M=num 
@@ -71,26 +72,23 @@ V_Source:SRC1  N__17 0 Type="V_1Tone" V[1]=polar(1.2,0) V Freq[1]=LOfreq GHz    
 V_Source:SRC2  N__19 0 Type="V_1Tone" V[1]=polar(1.2,180) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
 C:C4  N__19 LO_In C=1 nF 
 C:C3  N__17 LO_Ip C=1 nF 
+Port:PORT3  N__12 0 Num=1  Z=50 Ohm  Freq[1]=(RFfreq+df/2) GHz Freq[2]=(RFfreq-df/2) GHz    P[1]=polar(dbmtow(RFpower),0) P[2]=polar(dbmtow(RFpower),0) Noise=yes Pac=polar(dbmtow(0),0) 
 
 RFfreq=5
-rtest=50 tune{ 25 to 10000 by 100 }
+rtest=50 notune{ 25 to 10000 by 100 }
 IFfreq=0.05
 df=0.01
 LOfreq=RFfreq-IFfreq
 RFpower=-50
-Port:PORT1  N__12 0 Num=1 Z=50 P[1]=dbmtow(RFpower) Freq[1]=RFfreq GHz    Noise=yes 
-aele CG_linear=mag(mix(HB.Vout,{1,-1})/mix(HB.vin,{0,1}));CG_linear_p=mag(mix(HB.Vout2,{1,-1})/mix(HB.vin,{0,1}));CG_linear_n=mag(mix(HB.Vout1,{1,-1})/mix(HB.vin,{0,1}));CG_dB=20*log(CG_linear);CG_dB_p=20*log(CG_linear_p);CG_dB_n=20*log(CG_linear_n);
 #uselib "ckt" , "Balun3Port"
 Balun3Port:CMP1  Vout Vout1 Vout2 
-Port:Term2  Vout 0 Num=2 Z=100 kOhm Noise=yes 
-HB:HB3 MaxOrder=5 Freq[1]=LOfreq GHz Freq[2]=RFfreq GHz Order[1]=7 Order[2]=3 StatusLevel=2 FundOversample=1 \
+HB:HB5 MaxOrder=9 Freq[1]=LOfreq GHz Freq[2]=(RFfreq+df/2) GHz Freq[3]=(RFfreq-df/2) GHz Order[1]=7 Order[2]=4 Order[3]=4 StatusLevel=4 FundOversample=1 \
 Restart=no OutputBudgetIV=no \
-HBSS_WSP=0 SweepVar="RFpower" SweepPlan="HB3_stim" OutputPlan="HB3_Output" UseKrylov=0 SamanskiiConstant=2 \
+HBSS_WSP=0 SweepVar="RFfreq" SweepPlan="HB5_stim" OutputPlan="HB5_Output" 
 
+SweepPlan: HB5_stim Start=2 Stop=5 Step=0.1 
 
-SweepPlan: HB3_stim Start=-50 Stop=-20 Step=2 
-
-OutputPlan:HB3_Output \
+OutputPlan:HB5_Output \
       Type="Output" \
       UseNodeNestLevel=yes \
       NodeNestLevel=2 \
@@ -100,7 +98,6 @@ OutputPlan:HB3_Output \
       SavedEquationNestLevel=2 \
       SavedEquationName[1]="IFfreq" \
       SavedEquationName[2]="LOfreq" \
-      SavedEquationName[3]="Rload" \
       UseDeviceCurrentNestLevel=no \
       DeviceCurrentNestLevel=0 \
       DeviceCurrentDeviceType="All" \
@@ -111,12 +108,14 @@ OutputPlan:HB3_Output \
       DeviceVoltageNestLevel=0 \
       DeviceVoltageDeviceType="All"
 
-Tran:HB3_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
+Tran:HB5_tran HB_Sol=1 SteadyState=1 StatusLevel=3 \
 Freq[1]=LOfreq GHz Order[1]=7 
 
-Component:tahb_HB3 Module="ATAHB" Type="ModelExtractor" \ 
- Tran_Analysis="HB3_tran" HB_Analysis="HB3" 
+Component:tahb_HB5 Module="ATAHB" Type="ModelExtractor" \ 
+ Tran_Analysis="HB5_tran" HB_Analysis="HB5" 
 
+aele IF_high_linear=mag(mix(HB.Vout,{-1,1,0}));IF_low_linear=mag(mix(HB.Vout,{-1,0,1}));IM3_high_linear=mag(mix(HB.Vout,{-1,2,-1}));IM3_low_linear=mag(mix(HB.Vout,{-1,-1,2}));IF_high_dB=20*log(IF_high_linear);IF_low_dB=20*log(IF_low_linear);IM3_high_dB=20*log(IM3_high_linear);IM3_low_dB=20*log(IM3_low_linear);IIP3_high=(IF_high_dB-IM3_high_dB)/2+RFpower;IIP3_low=(IF_low_dB-IM3_low_dB)/2+RFpower;
+Port:Term2  Vout 0 Num=2 Z=100 kOhm Noise=yes 
 Short:DC_Block2  N__12 vin Mode=1 
 V_Source:SRC3  N__23 0 Type="V_DC" Vdc=1 V SaveCurrent=1 
 V_Source:SRC6  N__27 0 Type="V_1Tone" V[1]=polar(1.2,90) V Freq[1]=LOfreq GHz    Vac=polar(1,0) V SaveCurrent=1 
@@ -129,5 +128,5 @@ Balun3Port:CMP2  VoutQ N__15 N__16
 LNA_wrk:X3  N__23 N P N__20 N__18 
 #uselib "ckt" , "Balun3Port"
 Balun3Port:CMP3  vin P N 
-mixer:X2  LO_In LO_Ip N__20 N__18 Vout2 Vout1 
 mixer:X4  LO_Qn LO_Qp N__20 N__18 N__16 N__15 
+mixer:X2  LO_In LO_Ip N__20 N__18 Vout2 Vout1 

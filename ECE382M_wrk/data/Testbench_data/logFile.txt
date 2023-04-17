@@ -3,26 +3,10 @@ hpeesofsim (*) 571.shp Nov  8 2022, MINT version 5
     (64-bit windows built: Wed Nov 09, 2022 05:38:21 +0000)
 
 
-***** Simulation started at Mon Apr 17 09:09:42 2023
+***** Simulation started at Mon Apr 17 11:49:20 2023
       Running on host: "DESKTOP-RR47J6M"
       In Directory: "C:\Users\manth\Github\RFICProject\ECE382M_wrk\data"
-      Process ID: 23800
-
-Warning detected by hpeesofsim during netlist flattening.
-    In MOSFET `X2.MOSFET2', the Mult parameter is obsolete
-    and should not be used. Use _M instead.
-
-Warning detected by hpeesofsim during netlist flattening.
-    In MOSFET `X2.MOSFET4', the Mult parameter is obsolete
-    and should not be used. Use _M instead.
-
-Warning detected by hpeesofsim during netlist flattening.
-    In MOSFET `X2.MOSFET1', the Mult parameter is obsolete
-    and should not be used. Use _M instead.
-
-Warning detected by hpeesofsim during netlist flattening.
-    In MOSFET `X2.MOSFET3', the Mult parameter is obsolete
-    and should not be used. Use _M instead.
+      Process ID: 24248
 
 Warning detected by hpeesofsim during netlist flattening.
     In MOSFET `X4.MOSFET2', the Mult parameter is obsolete
@@ -40,448 +24,446 @@ Warning detected by hpeesofsim during netlist flattening.
     In MOSFET `X4.MOSFET3', the Mult parameter is obsolete
     and should not be used. Use _M instead.
 
-Warning detected by hpeesofsim in X4.MOSFET3 during circuit set up.
+Warning detected by hpeesofsim during netlist flattening.
+    In MOSFET `X2.MOSFET2', the Mult parameter is obsolete
+    and should not be used. Use _M instead.
+
+Warning detected by hpeesofsim during netlist flattening.
+    In MOSFET `X2.MOSFET4', the Mult parameter is obsolete
+    and should not be used. Use _M instead.
+
+Warning detected by hpeesofsim during netlist flattening.
+    In MOSFET `X2.MOSFET1', the Mult parameter is obsolete
+    and should not be used. Use _M instead.
+
+Warning detected by hpeesofsim during netlist flattening.
+    In MOSFET `X2.MOSFET3', the Mult parameter is obsolete
+    and should not be used. Use _M instead.
+
+Warning detected by hpeesofsim in X2.MOSFET3 during circuit set up.
     Pd = 0 is less than W.
 
-Warning detected by hpeesofsim in X4.MOSFET3 during circuit set up.
+Warning detected by hpeesofsim in X2.MOSFET3 during circuit set up.
     Ps = 0 is less than W.
 
 Warning detected by hpeesofsim in topology check during circuit set up.
     Number of nodes with no DC path to ground (topology corrected): 4
 
-Warning detected by hpeesofsim during circuit set up.
-    Name 'Rload' to be output is not an expression.
 
-
-HB HB3[1] <ECE382M:Testbench:schematic>
+HB HB5[1] <ECE382M:Testbench:schematic>
 Pt DC convergence is used.
     Number of tones:   1.
     Number of frequencies:   8.
     Number of time samples:  16.
     Number of HB equations (problem size): 780.
-    Auto mode: off.
+    Auto mode: on.
     Convergence mode: Auto.
     Linear solver: direct.
 ------------------------------------------------------------------------------
 Newton solver:					
 Iter	KCL residual	Damp %	Sol update
 ------------------------------------------------------------------------------
-0.0*	94.7264 mA  	100.0             
-1.0 	11.9728 mA  	100.0	75.8878 mV   
-1.1 	6.08566 mA  	100.0	47.7035 mV   
-1.2 	4.26381 mA  	100.0	40.7403 mV   
-1.3*	3.53797 mA  	100.0	270.37 mV    
-2.0 	2.78869 mA  	100.0	83.3734 mV   
-2.1 	2.28862 mA  	100.0	53.5123 mV   
-2.2 	1.69905 mA  	100.0	35.9826 mV   
-2.3 	1.25237 mA  	100.0	24.3695 mV   
-2.4 	952.469 uA  	100.0	16.8117 mV   
-2.5 	769.43 uA   	100.0	12.4742 mV   
-2.6 	632.165 uA  	100.0	9.24219 mV   
-2.7 	531.389 uA  	100.0	6.80006 mV   
-2.8 	439.706 uA  	100.0	5.42737 mV   
-2.9 	354.62 uA   	100.0	4.53129 mV   
-2.10 	282.093 uA  	100.0	3.68361 mV   
-2.11 	218.707 uA  	100.0	2.91878 mV   
-2.12 	166.904 uA  	100.0	2.25541 mV   
-2.13 	125.593 uA  	100.0	1.69948 mV   
-2.14 	93.2451 uA  	100.0	1.24781 mV   
-2.15 	67.3553 uA  	100.0	891.225 uV   
-2.16 	47.2397 uA  	100.0	617.29 uV    
-2.17 	32.2172 uA  	100.0	454.585 uV   
-2.18 	21.1153 uA  	100.0	327.776 uV   
-2.19 	13.1539 uA  	100.0	229.878 uV   
-2.20*	7.61178 uA  	100.0	1.86629 mV   
-3.0*	7.61178 uA  	100.0	1.86629 mV   
-4.0*	1.86713 mA  	100.0	1.86378 mV   
-5.0*	7.06594 uA  	100.0	4.00104 uV   
-6.0 	3.31285 uA  	100.0	21.8043 nV   
-An HB truncation error may be present.
-o The HB truncation error is due to using a finite order 
-  (number of harmonics) in the representation of the
-  circuit signals.
+0.0*	91.6881 mA  	100.0             
+1.0 	11.4624 mA  	100.0	72.2971 mV   
+1.1 	5.60629 mA  	100.0	35.0002 mV   
+1.2 	3.51286 mA  	100.0	24.5053 mV   
+1.3 	2.55327 mA  	100.0	20.0597 mV   
+1.4*	2.01664 mA  	100.0	206.917 mV   
+2.0 	1.03477 mA  	100.0	87.059 mV    
+2.1 	926.137 uA  	100.0	50.6324 mV   
+        Samanskii-Newton iteration failed
+2.2*	926.137 uA  	100.0	227.473 mV   
+3.0 	762.731 uA  	100.0	57.417 mV    
+3.1 	524.423 uA  	100.0	24.9618 mV   
+3.2 	466.589 uA  	100.0	11.721 mV    
+3.3 	367.885 uA  	100.0	10.8191 mV   
+3.4 	275.87 uA   	100.0	12.2335 mV   
+3.5 	193.596 uA  	100.0	11.0388 mV   
+3.6 	128.236 uA  	100.0	8.76836 mV   
+3.7 	80.013 uA   	100.0	6.37493 mV   
+3.8 	46.267 uA   	100.0	4.31528 mV   
+3.9 	24.1708 uA  	100.0	2.74425 mV   
+3.10 	10.8164 uA  	100.0	1.6319 mV    
+3.11 	4.80677 uA  	100.0	900.623 uV   
+3.12 	3.108 uA    	100.0	453.934 uV   
+3.13 	3.06323 uA  	100.0	196.245 uV   
+Warning detected by hpeesofsim during HB analysis `HB5'.
+    An HB truncation error may be present.
+    o The HB truncation error is due to using a finite order 
+    (number of harmonics) in the representation of the
+    circuit signals.
 
-Waveform                Trunc error             Tolerance
----------------------------------------------------------
-X4.N__25                9.414e-05       >       1.030e-06
-X4.N__24                9.414e-05       >       1.030e-06
-X2.N__24                9.414e-05       >       1.030e-06
-X2.N__25                9.414e-05       >       1.030e-06
+    Waveform                Trunc error             Tolerance
+    ---------------------------------------------------------
+    X2.N__25                1.190e-04       >       1.027e-06
+    X2.N__24                1.190e-04       >       1.027e-06
+    X4.N__24                1.190e-04       >       1.027e-06
+    X4.N__25                1.190e-04       >       1.027e-06
 
-o Number of waveforms violating the HB truncation error check:
+    o Number of waveforms violating the HB truncation error check:
         4 out of 14 waveforms.
-o Estimated max HB truncation error: 9.414e-05 @ waveform X4.N__25 .
-o The maximal HB truncation error estimate is greater than the 
-  achieved tolerance of 1.030e-06 for this waveform.
-o A time-domain plot of the N__12 waveform may show the error as 
-  Gibbs ripples.
-o To reduce the error, increase the order (number of harmonics) 
-  and re-simulate.
+    o Estimated max HB truncation error: 1.190e-04 @ waveform X2.N__25 .
+    o The maximal HB truncation error estimate is greater than the 
+    achieved tolerance of 1.027e-06 for this waveform.
+    o A time-domain plot of the N__12 waveform may show the error as 
+    Gibbs ripples.
+    o To reduce the error, increase the order (number of harmonics) 
+    and re-simulate.
 
-HB HB3[1] <ECE382M:Testbench:schematic>   RFpower=(-50->-20)
-    Number of tones:   2.
-    Number of frequencies:   29.
-    Number of time samples:  128.
-    Number of HB equations (problem size): 2964.
-    Auto mode: off.
+
+HB HB5[1] <ECE382M:Testbench:schematic>   RFfreq=(2->5)
+    Number of tones:   3.
+    Number of frequencies:   404.
+    Number of time samples:  2048.
+    Number of HB equations (problem size): 41964.
+    Auto mode: on.
     Convergence mode: Auto.
-    Linear solver: direct.
-    RFpower=-50            0.00% 1/16
+    Linear solver: Krylov (GS_GMRES) iters=150 loose=50.
+    Preconditioner: DCP.
+    The general solver is used for HB Krylov preconditioning.
+    RFfreq=2              0.00% 1/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0*	268.172 uA  	100.0             
-1.0 	2.95797 uA  	100.0	139.652 uV   
-1.1 	84.2693 nA  	100.0	5.30284 uV   
-1.2 	2.7973 nA   	100.0	238.985 nV   
-    RFpower=-48            6.67% 2/16
+0 	162.644 uA  	100.0             
+1 	23.1933 uA  	100.0	10.0036 mV  	 15	9.445e-02   
+2 	1.78759 uA  	100.0	5.57099 mV  	 19	4.265e-02   
+3 	7.89015 nA  	100.0	173.138 uV  	 33	4.870e-03   
+4 	22.7226 pA  	100.0	1.36564 uV  	 50	3.035e-03   
+5 	204.751 fA  	100.0	5.61311 nV  	 50	6.594e-03   
+    RFfreq=2.1            3.33% 2/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	668.248 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	26.9242 nA  	100.0             
+0 	942.843 uA  	100.0             
+1 	38.5676 uA  	100.0	1.1222 mV   	 11	9.202e-02   
+2 	1.05418 uA  	100.0	905.179 uV  	 19	3.716e-02   
+3 	867.643 pA  	100.0	24.5887 uV  	 31	4.854e-03   
+4 	2.84282 pA  	100.0	187.696 nV  	 50	3.037e-03   
 
-    RFpower=-46           13.33% 3/16
+    RFfreq=2.2            6.67% 3/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	900.445 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	44.771 nA   	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	237.348 pA  	100.0             
+0 	930.955 uA  	100.0             
+1 	24.5448 uA  	100.0	1.26663 mV  	 12	9.191e-02   
+2 	3.11653 uA  	100.0	944.247 uV  	 18	4.020e-02   
+3 	7.17888 nA  	100.0	25.1051 uV  	 25	1.374e-02   
+4 	3.2307 pA   	100.0	467.992 nV  	 50	1.191e-03   
 
-    RFpower=-44           20.00% 4/16
+    RFfreq=2.3           10.00% 4/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	1.24361 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	80.307 nA   	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	610.621 pA  	100.0             
+0 	931.717 uA  	100.0             
+1 	16.427 uA   	100.0	1.40515 mV  	 13	9.665e-02   
+2 	944.483 nA  	100.0	949.09 uV   	 19	4.397e-02   
+3 	12.3208 nA  	100.0	29.1984 uV  	 28	4.746e-03   
+4 	5.37411 pA  	100.0	193.097 nV  	 50	1.170e-03   
 
-    RFpower=-42           26.67% 5/16
+    RFfreq=2.4           13.33% 5/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	1.53917 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	103.424 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	953.149 pA  	100.0             
+0 	941.191 uA  	100.0             
+1 	34.0476 uA  	100.0	1.6472 mV   	 15	9.069e-02   
+2 	504.608 nA  	100.0	700.467 uV  	 19	4.704e-02   
+3 	3.13285 nA  	100.0	28.4444 uV  	 26	3.758e-03   
+4 	1.89109 pA  	100.0	128.119 nV  	 50	9.200e-04   
 
-    RFpower=-40           33.33% 6/16
+    RFfreq=2.5           16.67% 6/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	2.084 uA    	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	168.672 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	1.87814 nA  	100.0             
+0 	960.244 uA  	100.0             
+1 	39.9278 uA  	100.0	2.1158 mV   	 16	8.240e-02   
+2 	2.32698 uA  	100.0	498.373 uV  	 19	4.518e-02   
+3 	5.20884 nA  	100.0	24.4144 uV  	 24	4.842e-03   
+4 	1.46132 pA  	100.0	129.461 nV  	 48	9.702e-04   
 
-    RFpower=-38           40.00% 7/16
+    RFfreq=2.6           20.00% 7/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	2.80974 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	273.116 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	4.09854 nA  	100.0             
+0 	990.475 uA  	100.0             
+1 	48.907 uA   	100.0	2.66797 mV  	 16	8.992e-02   
+2 	2.92541 uA  	100.0	541.417 uV  	 19	4.906e-02   
+3 	4.69438 nA  	100.0	27.459 uV   	 25	4.318e-03   
+4 	2.06175 pA  	100.0	122.886 nV  	 46	8.790e-04   
 
-    RFpower=-36           46.67% 8/16
+    RFfreq=2.7           23.33% 8/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	3.872 uA    	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	427.633 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	8.33345 nA  	100.0             
+0 	1.03449 mA  	100.0             
+1 	36.8829 uA  	100.0	3.37039 mV  	 17	6.836e-02   
+2 	225.66 nA   	100.0	476.21 uV   	 20	4.507e-02   
+3 	3.53835 nA  	100.0	17.2155 uV  	 25	4.721e-03   
+4 	2.33889 pA  	100.0	112.24 nV   	 46	8.829e-04   
 
-    RFpower=-34           53.33% 9/16
+    RFfreq=2.8           26.67% 9/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	5.43919 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	698.166 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	17.3154 nA  	100.0             
+0 	1.09624 mA  	100.0             
+1 	57.7264 uA  	100.0	4.39292 mV  	 17	8.314e-02   
+2 	1.89307 uA  	100.0	658.216 uV  	 21	4.120e-02   
+3 	5.00713 nA  	100.0	15.5315 uV  	 30	4.934e-03   
+4 	2.81375 pA  	100.0	128.734 nV  	 42	8.941e-04   
 
-    RFpower=-32           60.00% 10/16
+    RFfreq=2.9           30.00% 10/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	7.78709 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	1.10839 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	39.4022 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.3 	1.71235 nA  	100.0             
+0 	1.18179 mA  	100.0             
+1 	45.7183 uA  	100.0	5.8676 mV   	 18	8.049e-02   
+2 	2.91433 uA  	100.0	733.769 uV  	 21	4.121e-02   
+3 	2.0327 nA   	100.0	14.7194 uV  	 33	4.566e-03   
+4 	2.27883 pA  	100.0	92.7149 nV  	 41	9.513e-04   
 
-    RFpower=-30           66.67% 11/16
+    RFfreq=3             33.33% 11/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	11.0038 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	1.78641 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	80.2441 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.3 	4.61919 nA  	100.0             
+0 	1.2997 mA   	100.0             
+1 	8.20917 uA  	100.0	8.0184 mV   	 19	8.995e-02   
+2 	311.379 nA  	100.0	902.988 uV  	 23	4.056e-02   
+3 	1.80776 nA  	100.0	23.5978 uV  	 33	4.979e-03   
+4 	1.80631 pA  	100.0	131.446 nV  	 42	9.696e-04   
 
-    RFpower=-28           73.33% 12/16
+    RFfreq=3.1           36.67% 12/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	15.7196 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	2.80293 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	166.146 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.3 	13.5172 nA  	100.0             
+0 	1.46103 mA  	100.0             
+1 	58.6771 uA  	100.0	11.3773 mV  	 21	8.003e-02   
+2 	1.14056 uA  	100.0	583.114 uV  	 17	4.036e-02   
+3 	14.5085 nA  	100.0	31.3413 uV  	 33	4.360e-03   
+4 	4.52611 pA  	100.0	169.341 nV  	 50	1.573e-03   
 
-    RFpower=-26           80.00% 13/16
+    RFfreq=3.2           40.00% 13/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	23.3135 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	4.56268 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	348.468 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.3 	42.448 nA   	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.4 	5.67462 nA  	100.0             
+0 	1.67483 mA  	100.0             
+1 	67.2318 uA  	100.0	15.7338 mV  	 24	8.785e-02   
+2 	641.245 nA  	100.0	641.433 uV  	 14	4.946e-02   
+3 	6.58442 nA  	100.0	70.1502 uV  	 36	4.607e-03   
+4 	8.42071 pA  	100.0	394.014 nV  	 50	3.057e-03   
 
-    RFpower=-24           86.67% 14/16
+    RFfreq=3.3           43.33% 14/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	34.1588 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	7.23248 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	769.379 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.3 	124.772 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.4 	21.3814 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.5 	3.86697 nA  	100.0             
+0 	1.92663 mA  	100.0             
+1 	121.502 uA  	100.0	21.09 mV    	 25	9.595e-02   
+2 	1.6085 uA   	100.0	1.34052 mV  	 24	4.534e-02   
+3 	3.60525 nA  	100.0	111.786 uV  	 37	4.778e-03   
+4 	15.0184 pA  	100.0	527.359 nV  	 50	4.819e-03   
 
-    RFpower=-22           93.33% 15/16
+    RFfreq=3.4           46.67% 15/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	49.8735 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	11.411 uA   	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	1.63916 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.3 	336.65 nA   	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.4 	70.8852 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.5 	16.1216 nA  	100.0             
+0 	2.10305 mA  	100.0             
+1 	253.28 uA   	100.0	31.2823 mV  	 24	9.569e-02   
+2 	1.09553 uA  	100.0	2.44083 mV  	 23	4.818e-02   
+3 	8.4163 nA   	100.0	194.633 uV  	 37	4.734e-03   
+4 	21.2506 pA  	100.0	1.01515 uV  	 50	4.474e-03   
 
-    RFpower=-20          100.00% 16/16
+    RFfreq=3.5           50.00% 16/31
 ------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0.0 	72.8677 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.1 	18.4924 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.2 	3.20755 uA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.3 	791.194 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.4 	200.509 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.5 	55.6184 nA  	100.0             
-------------------------------------------------------------------------------
-Newton solver:					
-Iter	KCL residual	Damp %	Sol update
-------------------------------------------------------------------------------
-0.6 	15.197 nA   	100.0             
+0 	1.93494 mA  	100.0             
+1 	39.6003 uA  	100.0	28.0499 mV  	 19	8.883e-02   
+2 	1.08612 uA  	100.0	1.23775 mV  	 17	4.273e-02   
+3 	4.63346 nA  	100.0	158.167 uV  	 40	4.758e-03   
+4 	8.4225 pA   	100.0	1.20489 uV  	 50	1.837e-03   
+5 	40.1308 fA  	100.0	2.70141 nV  	 50	3.838e-03   
 
-An HB truncation error may be present.
-o The HB truncation error is due to using a finite order 
-  (number of harmonics) in the representation of the
-  circuit signals.
+    RFfreq=3.6           53.33% 17/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	1.99221 mA  	100.0             
+1 	29.9023 uA  	100.0	26.4193 mV  	 19	9.542e-02   
+2 	816.882 nA  	100.0	1.35171 mV  	 19	4.652e-02   
+3 	4.80761 nA  	100.0	128.974 uV  	 35	4.185e-03   
+4 	10.8045 pA  	100.0	934.157 nV  	 50	2.363e-03   
 
-Waveform                Trunc error             Tolerance
----------------------------------------------------------
-X4.N__24                1.520e-05       >       1.074e-06
-X4.N__25                1.449e-05       >       1.074e-06
-X2.N__25                1.320e-05       >       1.075e-06
-X2.N__24                1.280e-05       >       1.075e-06
+    RFfreq=3.7           56.67% 18/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	1.89925 mA  	100.0             
+1 	29.6903 uA  	100.0	19.4543 mV  	 19	7.475e-02   
+2 	721.92 nA   	100.0	1.20412 mV  	 20	4.204e-02   
+3 	3.41387 nA  	100.0	66.7473 uV  	 32	4.833e-03   
+4 	3.09193 pA  	100.0	304.196 nV  	 50	1.141e-03   
 
-o Number of waveforms violating the HB truncation error check:
-        4 out of 14 waveforms.
-o Estimated max HB truncation error: 1.520e-05 @ waveform X4.N__24 .
-o The maximal HB truncation error estimate is greater than the 
-  achieved tolerance of 1.074e-06 for this waveform.
-o A time-domain plot of the Vout1 waveform may show the error as 
-  Gibbs ripples.
-o To reduce the error, increase the order (number of harmonics) 
-  and re-simulate.
+    RFfreq=3.8           60.00% 19/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	1.63181 mA  	100.0             
+1 	49.9274 uA  	100.0	11.9314 mV  	 18	7.325e-02   
+2 	891.184 nA  	100.0	796.652 uV  	 20	3.577e-02   
+3 	2.85877 nA  	100.0	38.8755 uV  	 30	4.812e-03   
+4 	2.58511 pA  	100.0	177.146 nV  	 47	9.738e-04   
+
+    RFfreq=3.9           63.33% 20/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	1.37444 mA  	100.0             
+1 	67.4849 uA  	100.0	8.1291 mV   	 17	7.963e-02   
+2 	2.51538 uA  	100.0	604.681 uV  	 19	4.672e-02   
+3 	1.49557 nA  	100.0	33.1001 uV  	 27	3.541e-03   
+4 	1.30623 pA  	100.0	137.562 nV  	 45	9.773e-04   
+
+    RFfreq=4             66.67% 21/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	1.17329 mA  	100.0             
+1 	54.6934 uA  	100.0	6.35314 mV  	 16	8.118e-02   
+2 	2.13216 uA  	100.0	502.684 uV  	 18	4.670e-02   
+3 	3.24846 nA  	100.0	28.8668 uV  	 25	4.758e-03   
+4 	4.35691 pA  	100.0	144.195 nV  	 41	9.177e-04   
+
+    RFfreq=4.1           70.00% 22/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	1.02021 mA  	100.0             
+1 	16.2317 uA  	100.0	4.88547 mV  	 15	8.557e-02   
+2 	837.491 nA  	100.0	446.683 uV  	 18	3.655e-02   
+3 	864.458 pA  	100.0	18.9238 uV  	 24	4.324e-03   
+4 	781.253 fA  	100.0	63.9074 nV  	 38	9.654e-04   
+
+    RFfreq=4.2           73.33% 23/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	903.539 uA  	100.0             
+1 	27.8279 uA  	100.0	3.7982 mV   	 14	8.872e-02   
+2 	930.413 nA  	100.0	414.365 uV  	 17	4.201e-02   
+3 	2.78643 nA  	100.0	20.1174 uV  	 23	3.484e-03   
+4 	1.88536 pA  	100.0	59.6777 nV  	 36	9.465e-04   
+
+    RFfreq=4.3           76.67% 24/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	812.869 uA  	100.0             
+1 	39.5046 uA  	100.0	3.02502 mV  	 13	9.521e-02   
+2 	255.688 nA  	100.0	384.8 uV    	 16	4.326e-02   
+3 	1.20695 nA  	100.0	20.9881 uV  	 22	4.143e-03   
+4 	1.10913 pA  	100.0	83.3961 nV  	 36	8.540e-04   
+
+    RFfreq=4.4           80.00% 25/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	741.657 uA  	100.0             
+1 	20.6591 uA  	100.0	2.44045 mV  	 12	9.998e-02   
+2 	653.975 nA  	100.0	373.816 uV  	 15	4.885e-02   
+3 	3.8509 nA   	100.0	21.5205 uV  	 21	4.390e-03   
+4 	1.13226 pA  	100.0	91.4637 nV  	 34	8.894e-04   
+
+    RFfreq=4.5           83.33% 26/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	684.065 uA  	100.0             
+1 	16.3794 uA  	100.0	2.06349 mV  	 12	8.234e-02   
+2 	695.253 nA  	100.0	265.686 uV  	 14	4.953e-02   
+3 	3.41821 nA  	100.0	16.3974 uV  	 21	4.402e-03   
+4 	707.437 fA  	100.0	65.7233 nV  	 34	8.174e-04   
+
+    RFfreq=4.6           86.67% 27/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	636.486 uA  	100.0             
+1 	13.0162 uA  	100.0	1.76115 mV  	 12	6.819e-02   
+2 	485.339 nA  	100.0	204.482 uV  	 14	4.278e-02   
+3 	1.38584 nA  	100.0	11.3174 uV  	 21	4.528e-03   
+4 	771.49 fA   	100.0	42.6186 nV  	 33	9.250e-04   
+
+    RFfreq=4.7           90.00% 28/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	596.547 uA  	100.0             
+1 	17.2591 uA  	100.0	1.49109 mV  	 11	8.598e-02   
+2 	688.29 nA   	100.0	209.964 uV  	 13	4.504e-02   
+3 	12.4119 nA  	100.0	12.667 uV   	 20	3.843e-03   
+4 	1.20432 pA  	100.0	43.2641 nV  	 32	8.640e-04   
+
+    RFfreq=4.8           93.33% 29/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	562.567 uA  	100.0             
+1 	13.0743 uA  	100.0	1.30161 mV  	 11	7.243e-02   
+2 	502.783 nA  	100.0	163.46 uV   	 13	4.027e-02   
+3 	7.23903 nA  	100.0	9.21415 uV  	 20	4.342e-03   
+4 	3.32583 pA  	100.0	30.7546 nV  	 31	8.827e-04   
+
+    RFfreq=4.9           96.67% 30/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	533.302 uA  	100.0             
+1 	32.6368 uA  	100.0	1.13032 mV  	 10	9.934e-02   
+2 	816.022 nA  	100.0	186.83 uV   	 11	4.891e-02   
+3 	6.1166 nA   	100.0	12.7377 uV  	 19	3.389e-03   
+4 	3.06662 pA  	100.0	47.7838 nV  	 31	7.769e-04   
+
+    RFfreq=5            100.00% 31/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	507.804 uA  	100.0             
+1 	27.8795 uA  	100.0	1.01482 mV  	 10	8.585e-02   
+2 	554.637 nA  	100.0	147.397 uV  	 11	4.463e-02   
+3 	3.43007 nA  	100.0	9.28832 uV  	 19	3.345e-03   
+4 	1.64687 pA  	100.0	34.7319 nV  	 30	8.047e-04   
+
 
 Resource usage:
-  Total stopwatch time     =     1.48 seconds.
+  Total stopwatch time     =    12.56 seconds.
 
