@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dc_annotation_options>
- <options SolutionFile="annotation_1.xml" analysis="AC1" SweepPoint="freq=1e+09" cell="LNA_wrk" UseFirstSweep="false" ToggleCurrent="true" library="ECE382M" view="schematic" ToggleVoltage="true"/>
- <options cell="mixer" ToggleCurrent="true" library="ECE382M" view="schematic" ToggleVoltage="true"/>
- <options cell="Testbench" ToggleCurrent="true" library="ECE382M" view="schematic" ToggleVoltage="true"/>
+ <options ToggleVoltage="true" UseFirstSweep="false" cell="LNA_wrk" analysis="AC1" library="ECE382M" SweepPoint="freq=1e+09" ToggleCurrent="true" SolutionFile="annotation_1.xml" view="schematic"/>
+ <options ToggleVoltage="true" cell="mixer" library="ECE382M" ToggleCurrent="true" view="schematic"/>
+ <options ToggleVoltage="true" cell="Testbench" library="ECE382M" ToggleCurrent="true" view="schematic"/>
 </dc_annotation_options>
