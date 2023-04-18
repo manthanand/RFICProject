@@ -5,7 +5,7 @@ Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="ECE38
 ; Library Name: ECE382M
 ; Cell Name: LNA_wrk
 ; View Name: schematic
-define LNA_wrk ( Vdd  Vinn  Vinp  Voutn  Voutp ) 
+define LNA_wrk ( Vb  Vdd  Vinn  Vinp  Voutn  Voutp ) 
 ;parameters 
 #ifndef inc_ECE382M_3aLNA__wrk_3aschematic__130nm__bulk_2enet
 #define inc_ECE382M_3aLNA__wrk_3aschematic__130nm__bulk_2enet 1
@@ -15,7 +15,6 @@ define LNA_wrk ( Vdd  Vinn  Vinp  Voutn  Voutp )
 INDQ_Z:L8  Vdd Voutn L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz notune{ 1.875 GHz to 5.625 GHz by 0.375 GHz } Mode=1 Rdc=0.0 Ohm 
 #uselib "ckt" , "INDQ_Z"
 INDQ_Z:L5  Vdd Voutp L=Ldrain nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz notune{ 1.875 GHz to 5.625 GHz by 0.375 GHz } Mode=1 Rdc=0.0 Ohm 
-V_Source:SRC3  N__17 0 Type="V_DC" Vdc=vb V SaveCurrent=1 
 
 width=18 tune{ 1 to 80 by 1 } opt{ 1 to 40 }
 cap=30 f tune{ 0.5 f to 10000 f by 10 f }
@@ -25,45 +24,42 @@ vdd=1 notune{ 0 to 2.5 by 0.1 }  opt{ 1 to 40 }
 numcas=20 notune{ 1 to 40 by 1 }  opt{ 1 to 40 }
 wcas=20 notune{ 1 to 40 by 1 }  opt{ 1 to 40 }
 lencas=130 notune{ 130 to 4000 by 10 }  opt{ 130 to 4000 }
-vb=1.1 tune{ 0 to 2.5 by 0.05 }
 len=310 tune{ 130 to 4000 by 10 } opt{ 130 to 4000 }
 Ldrain=9.3 tune{ 0 to 10 by 0.5 } noopt{ 0 to 10 }
 Lsource=0.7 tune{ 0 to 10 by 0.1 }
 num=15 tune{ 1 to 40 by 1 } opt{ 1 to 40 }
 R:R7  Vinp N__8 R=Rtest Ohm Noise=yes 
-"nmos":MOSFET4  Voutp N__3 N__8 0 Length=len nm Width=width um Mode=1 Noise=yes _M=num 
+"nmos":MOSFET4  Voutp Vb N__8 0 Length=len nm Width=width um Mode=1 Noise=yes _M=num 
 CAPQ:C1  Voutp Vdd C=cap F Q=50.0 F=3.75 GHz Mode=1 
 CAPQ:C2  Voutn Vdd C=cap F Q=50.0 F=3.75 GHz Mode=1 
 #uselib "ckt" , "INDQ_Z"
 INDQ_Z:L7  N__15 0 L=Lsource nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz Mode=1 Rdc=0.0 Ohm 
-"nmos":MOSFET2  Voutn N__17 N__15 0 Length=len nm Width=width um Mode=1 Noise=yes _M=num 
+"nmos":MOSFET2  Voutn Vb N__15 0 Length=len nm Width=width um Mode=1 Noise=yes _M=num 
 #uselib "ckt" , "INDQ_Z"
 INDQ_Z:L6  N__8 0 L=Lsource nH notune{ 5 nH to 20 nH by 1 nH } Q=15 F=3.75 GHz Mode=1 Rdc=0.0 Ohm 
 R:R8  Vinn N__15 R=Rtest Ohm Noise=yes 
-V_Source:SRC2  N__3 0 Type="V_DC" Vdc=vb V SaveCurrent=1 
 end LNA_wrk
 
 ; Library Name: ECE382M
 ; Cell Name: mixer
 ; View Name: schematic
-define mixer ( LOn  LOp  Vinn  Vinp  Voutn  Voutp ) 
+define mixer ( LOn  LOp  Vb  Vinn  Vinp  Voutn  Voutp ) 
 ;parameters 
 #ifndef inc_ECE382M_3amixer_3aschematic__130nm__bulk_2enet
 #define inc_ECE382M_3amixer_3aschematic__130nm__bulk_2enet 1
 #include "C:\Users\manth\Github\RFICProject\ECE382M_wrk\130nm_bulk.net"
 #endif
-R:R3  LOp N__19 R=200k Noise=yes 
+R:R3  LOp Vb R=200k Noise=yes 
 R:R2  N__25 0 R=load Ohm Noise=yes 
 R:R1  N__24 0 R=load Ohm Noise=yes 
 "nmos":MOSFET2  Vinn LOn N__24 0 Length=130 nm Width=width um Mult=30 Mode=1 Noise=yes 
 "nmos":MOSFET4  Vinn LOp N__25 0 Length=130 nm Width=width um Mult=30 Mode=1 Noise=yes 
 "nmos":MOSFET1  Vinp LOp N__24 0 Length=130 nm Width=width um Mult=30 Mode=1 Noise=yes 
 "nmos":MOSFET3  Vinp LOn N__25 0 Length=130 nm Width=width um Mult=30 Mode=1 Noise=yes 
-R:R4  LOn N__19 R=200k Noise=yes 
+R:R4  LOn Vb R=200k Noise=yes 
 
 width=1 notune{ 0.1 to 100 by 1 }
 load=200k notune{ 100 to 10000 by 100 }
-V_Source:SRC2  N__19 0 Type="V_DC" Vdc=300m SaveCurrent=1 
 Short:DC_Block4  N__25 Voutn Mode=1 
 Short:DC_Block3  N__24 Voutp Mode=1 
 end mixer
@@ -139,8 +135,10 @@ V_Source:SRC5  N__30 0 Type="V_1Tone" V[1]=polar(1.2,270) V Freq[1]=LOfreq GHz  
 Port:Term3  VoutQ 0 Num=3 Z=100 kOhm Noise=yes 
 #uselib "ckt" , "Balun3Port"
 Balun3Port:CMP2  VoutQ N__15 N__16 
-LNA_wrk:X3  N__23 N P N__20 N__18 
 #uselib "ckt" , "Balun3Port"
 Balun3Port:CMP3  vin P N 
-mixer:X4  LO_Qn LO_Qp N__20 N__18 N__16 N__15 
-mixer:X2  LO_In LO_Ip N__20 N__18 Vout2 Vout1 
+V_Source:SRC7  Vb 0 Type="V_DC" Vdc=.3 V SaveCurrent=1 
+mixer:X4  LO_Qn LO_Qp Vb N__11 N__24 N__16 N__15 
+mixer:X5  LO_In LO_Ip Vb N__11 N__24 Vout2 Vout1 
+LNA_wrk:X6  N__26 N__23 N P N__11 N__24 
+V_Source:SRC8  N__26 0 Type="V_DC" Vdc=1.1 V SaveCurrent=1 
