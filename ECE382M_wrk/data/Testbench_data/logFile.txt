@@ -3,10 +3,10 @@ hpeesofsim (*) 571.shp Nov  8 2022, MINT version 5
     (64-bit windows built: Wed Nov 09, 2022 05:38:21 +0000)
 
 
-***** Simulation started at Tue Apr 18 13:33:31 2023
+***** Simulation started at Tue Apr 18 15:10:16 2023
       Running on host: "DESKTOP-RR47J6M"
       In Directory: "C:\Users\manth\Github\RFICProject\ECE382M_wrk\data"
-      Process ID: 4088
+      Process ID: 9092
 
 Warning detected by hpeesofsim during netlist flattening.
     In MOSFET `X5.MOSFET2', the Mult parameter is obsolete
@@ -40,58 +40,44 @@ Warning detected by hpeesofsim during netlist flattening.
     In MOSFET `X4.MOSFET3', the Mult parameter is obsolete
     and should not be used. Use _M instead.
 
-Warning detected by hpeesofsim in LinearCollapse '_2_' during analysis.
-    LinearCollapse is disabled because there is 'HB' analysis present.
-
 Warning detected by hpeesofsim in X4.MOSFET3 during circuit set up.
     Pd = 0 is less than W.
 
 Warning detected by hpeesofsim in X4.MOSFET3 during circuit set up.
     Ps = 0 is less than W.
 
-Warning detected by hpeesofsim during circuit set up.
-    Name 'Rload' to be output is not an expression.
 
+HB HB5[1] <ECE382M:Testbench:schematic>
 Pt DC convergence is used.
-
-SP SP1[1] <ECE382M:Testbench:schematic>   freq=(1 GHz->10 GHz)
-Warning detected by hpeesofsim during SP analysis `SP1'.
-    The global circuit temperature (25 C or 298.15 K) and the IEEE standard
-    noise temperature (16.85 C or 290 K) do not agree in the noise
-    analysis `SP1'.  As a result, the signal-to-noise ratio loss at the
-    the circuit temperature and the noise figure, defined and calculated
-    at the standard noise temperature, might not agree for a passive circuit
-    as well.  The `Temp' parameter on the `Options' item (25 C) can be set to
-    16.85 C to eliminate this discrepancy.
-
-
-
-HB HB4[1] <ECE382M:Testbench:schematic>
     Number of tones:   1.
-    Number of frequencies:   12.
-    Number of time samples:  32.
-    Number of HB equations (problem size): 874.
-    Auto mode: off.
+    Number of frequencies:   8.
+    Number of time samples:  16.
+    Number of HB equations (problem size): 570.
+    Auto mode: on.
     Convergence mode: Auto.
-    Linear solver: Krylov (GS_GMRES) iters=150 loose=50.
-    Preconditioner: DCP.
-    The general solver is used for HB Krylov preconditioning.
+    Linear solver: direct.
 ------------------------------------------------------------------------------
-Newton solver:					Linear solver:
-Iter	KCL residual	Damp %	Sol update	Iters	Residual
+Newton solver:					
+Iter	KCL residual	Damp %	Sol update
 ------------------------------------------------------------------------------
-0 	92.6682 mA  	100.0             
-1 	10.3768 mA  	100.0	607.197 mV  	  3	2.550e-03   
-2 	2.85836 mA  	100.0	126.424 mV  	  4	4.852e-02   
-3 	1.97029 mA  	100.0	235.092 mV  	 10	2.443e-02   
-4 	2.00075 mA  	100.0	238.271 mV  	 13	1.290e-02   
-5 	1.05802 mA  	100.0	122.394 mV  	 14	1.230e-02   
-6 	277.808 uA  	100.0	53.841 mV   	 14	6.795e-03   
-7 	22.6775 uA  	100.0	11.493 mV   	 12	6.459e-03   
-8 	330.543 nA  	100.0	824.08 uV   	 16	5.365e-03   
-9 	201.872 pA  	100.0	11.9236 uV  	 32	7.292e-04   
-10 	187.726 fA  	100.0	15.7073 nV  	 40	9.079e-04   
-Warning detected by hpeesofsim during HB analysis `HB4'.
+0.0*	90.0602 mA  	100.0             
+1.0 	8.03005 mA  	100.0	57.3487 mV   
+1.1 	4.08385 mA  	100.0	32.68 mV     
+1.2 	2.66997 mA  	100.0	23.7315 mV   
+1.3 	2.05925 mA  	100.0	21.4838 mV   
+1.4*	1.72369 mA  	100.0	299.894 mV   
+2.0 	1.01026 mA  	100.0	85.9509 mV   
+        Samanskii-Newton iteration failed
+2.1*	1.01026 mA  	100.0	141.658 mV   
+3.0*	532.964 uA  	100.0	42.1976 mV   
+4.0 	212.559 uA  	100.0	3.95646 mV   
+4.1 	31.3977 uA  	100.0	1.05818 mV   
+4.2 	30.8142 uA  	100.0	329.361 uV   
+4.3*	9.47431 uA  	100.0	164.771 uV   
+5.0 	606.14 nA   	100.0	609.916 nV   
+5.1 	7.58863 nA  	100.0	7.31651 nV   
+5.2 	261.064 pA  	100.0	272.169 pV   
+Warning detected by hpeesofsim during HB analysis `HB5'.
     An HB truncation error may be present.
     o The HB truncation error is due to using a finite order 
     (number of harmonics) in the representation of the
@@ -99,239 +85,376 @@ Warning detected by hpeesofsim during HB analysis `HB4'.
 
     Waveform                Trunc error             Tolerance
     ---------------------------------------------------------
-    N__16                   3.453e-05       >       1.031e-06
-    Vout1                   3.376e-05       >       1.032e-06
-    Vout2                   3.257e-05       >       1.031e-06
-    N__15                   3.181e-05       >       1.031e-06
+    N__15                   1.549e-04       >       1.022e-06
+    N__16                   1.549e-04       >       1.022e-06
+    Vout1                   1.549e-04       >       1.022e-06
+    Vout2                   1.549e-04       >       1.022e-06
 
     o Number of waveforms violating the HB truncation error check:
         4 out of 13 waveforms.
-    o Estimated max HB truncation error: 3.453e-05 @ waveform N__16 .
+    o Estimated max HB truncation error: 1.549e-04 @ waveform N__15 .
     o The maximal HB truncation error estimate is greater than the 
-    achieved tolerance of 1.031e-06 for this waveform.
-    o A time-domain plot of the Vout waveform may show the error as 
+    achieved tolerance of 1.022e-06 for this waveform.
+    o A time-domain plot of the N__12 waveform may show the error as 
     Gibbs ripples.
     o To reduce the error, increase the order (number of harmonics) 
     and re-simulate.
 
 
-HB HB4[1] <ECE382M:Testbench:schematic>   IFfreq=(0->100e-03)
-Warning detected by hpeesofsim during HB analysis `HB4'.
-     Several fundamental frequencies are set to the same value 2.4 GHz. A simpler frequency grid is advised and would be faster.
-
-    Number of tones:   2.
-    Number of frequencies:   33.
-    Number of time samples:  256.
-    Number of HB equations (HB problem size): 2470.
-    Number of SS/noise equations (SS/noise problem size): 4940.
-    Auto mode: off.
+HB HB5[1] <ECE382M:Testbench:schematic>   RFfreq=(2->5)
+    Number of tones:   3.
+    Number of frequencies:   404.
+    Number of time samples:  2048.
+    Number of HB equations (problem size): 30666.
+    Auto mode: on.
     Convergence mode: Auto.
     Linear solver: Krylov (GS_GMRES) iters=150 loose=50.
     Preconditioner: DCP.
     The general solver is used for HB Krylov preconditioning.
-    IFfreq=0              0.00% 1/11
+    RFfreq=2              0.00% 1/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	20.6673 uA  	100.0             
-1 	1.39883 uA  	100.0	441.474 uV  	 14	9.591e-02   
-2 	47.0678 nA  	100.0	190.588 uV  	 21	3.557e-02   
-3 	218.019 pA  	100.0	1.17241 uV  	 31	4.899e-03   
-4 	301.002 fA  	100.0	22.0492 nV  	 50	1.285e-03   
-Warning detected by hpeesofsim during HB analysis `HB4'.
-     More than one mixing term has landed on frequency 0 Hz.
-
-Warning detected by hpeesofsim during HB analysis `HB4'.
-     More than one mixing term has landed on frequency 2.4 GHz.
-
-Warning detected by hpeesofsim during HB analysis `HB4'.
-     More than one mixing term has landed on frequency 4.8 GHz.
-
-Warning detected by hpeesofsim during HB analysis `HB4'.
-     More than one mixing term has landed on frequency 7.2 GHz.
-
-Warning detected by hpeesofsim during HB analysis `HB4'.
-     More than one mixing term has landed on frequency 9.6 GHz.
-
-
-HB_NOISE HB4[1].HB4[1/11] <ECE382M:Testbench:schematic>
-
-    Noise Freq=0 Hz  NFssb=99.98 dB  NFdsb=99.98 dB  NFasb=5.39 dB  Conv Gain=-107.52 dB
-    Voltage Gain=19.02 dB  Current Gain=-51.46 dB  Power Gain=-16.22 dB
-    Noise Output=7.085e-09 V/Hz^(1/2)  Added Noise=7.085e-09 V/Hz^(1/2)
-    IFfreq=10e-03        10.00% 2/11
+0 	263.129 uA  	100.0             
+1 	67.4503 uA  	100.0	24.2835 mV  	 21	7.895e-02   
+2 	3.4591 uA   	100.0	4.24625 mV  	 30	5.037e-02   
+3 	24.2106 nA  	100.0	207.966 uV  	 48	4.603e-03   
+4 	241.818 pA  	100.0	2.15292 uV  	 50	9.596e-03   
+5 	4.4271 pA   	100.0	20.683 nV   	 50	2.648e-02   
+    RFfreq=2.1            3.33% 2/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	142.604 uA  	100.0             
-1 	11.251 uA   	100.0	15.4686 mV  	 20	8.755e-02   
-2 	532.938 nA  	100.0	1.60748 mV  	 17	4.811e-02   
-3 	4.25374 nA  	100.0	104.815 uV  	 30	3.958e-03   
-4 	3.21382 pA  	100.0	428.444 nV  	 49	9.607e-04   
-5 	13.6884 fA  	100.0	430.867 pV  	 50	2.566e-03   
+0 	1.47798 mA  	100.0             
+1 	30.1168 uA  	100.0	1.67051 mV  	 15	9.873e-02   
+2 	1.12082 uA  	100.0	1.14512 mV  	 25	4.653e-02   
+3 	6.10693 nA  	100.0	37.686 uV   	 49	4.649e-03   
+4 	67.8866 pA  	100.0	297.012 nV  	 50	9.168e-03   
 
-
-HB_NOISE HB4[1].HB4[2/11] <ECE382M:Testbench:schematic>
-
-    Noise Freq=10 MHz  NFssb=8.91 dB  NFdsb=5.97 dB  NFasb=5.42 dB  Conv Gain=-16.47 dB
-    Voltage Gain=18.99 dB  Current Gain=-51.50 dB  Power Gain=-16.25 dB
-    Noise Output=7.692e-09 V/Hz^(1/2)  Added Noise=7.081e-09 V/Hz^(1/2)
-    IFfreq=20e-03        20.00% 3/11
+    RFfreq=2.2            6.67% 3/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	79.065 uA   	100.0             
-1 	2.09074 uA  	100.0	46.4247 uV  	  8	8.829e-02   
-2 	37.1876 nA  	100.0	41.9666 uV  	 17	3.394e-02   
-3 	171.928 pA  	100.0	702.862 nV  	 29	4.709e-03   
-4 	377.351 fA  	100.0	5.15442 nV  	 42	8.722e-04   
+0 	1.42739 mA  	100.0             
+1 	24.1599 uA  	100.0	1.81952 mV  	 17	9.991e-02   
+2 	3.71993 uA  	100.0	898.605 uV  	 24	4.914e-02   
+3 	65.7411 nA  	100.0	29.8975 uV  	 37	1.980e-02   
+4 	122.721 pA  	100.0	750.273 nV  	 50	5.124e-03   
+5 	1.04735 pA  	100.0	6.65452 nV  	 50	1.772e-02   
 
-
-HB_NOISE HB4[1].HB4[3/11] <ECE382M:Testbench:schematic>
-
-    Noise Freq=20 MHz  NFssb=8.89 dB  NFdsb=6.01 dB  NFasb=5.45 dB  Conv Gain=-16.46 dB
-    Voltage Gain=18.99 dB  Current Gain=-51.49 dB  Power Gain=-16.25 dB
-    Noise Output=7.692e-09 V/Hz^(1/2)  Added Noise=7.08e-09 V/Hz^(1/2)
-    IFfreq=30e-03        30.00% 4/11
+    RFfreq=2.3           10.00% 4/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	79.4622 uA  	100.0             
-1 	2.07612 uA  	100.0	46.3264 uV  	  8	8.766e-02   
-2 	44.7086 nA  	100.0	41.7066 uV  	 17	3.459e-02   
-3 	219.508 pA  	100.0	716.245 nV  	 29	4.762e-03   
-4 	392.65 fA   	100.0	5.21344 nV  	 42	8.741e-04   
+0 	1.38621 mA  	100.0             
+1 	28.1336 uA  	100.0	1.95518 mV  	 19	9.503e-02   
+2 	4.92125 uA  	100.0	639.361 uV  	 24	4.629e-02   
+3 	40.9715 nA  	100.0	28.6201 uV  	 33	2.635e-02   
+4 	53.7476 pA  	100.0	1.06039 uV  	 50	1.786e-03   
+5 	1.20024 pA  	100.0	3.61133 nV  	 50	2.749e-02   
 
-
-HB_NOISE HB4[1].HB4[4/11] <ECE382M:Testbench:schematic>
-
-    Noise Freq=30 MHz  NFssb=8.87 dB  NFdsb=6.06 dB  NFasb=5.48 dB  Conv Gain=-16.46 dB
-    Voltage Gain=19.00 dB  Current Gain=-51.48 dB  Power Gain=-16.24 dB
-    Noise Output=7.691e-09 V/Hz^(1/2)  Added Noise=7.078e-09 V/Hz^(1/2)
-    IFfreq=40e-03        40.00% 5/11
+    RFfreq=2.4           13.33% 5/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	79.8643 uA  	100.0             
-1 	2.05989 uA  	100.0	46.2245 uV  	  8	8.703e-02   
-2 	52.8154 nA  	100.0	41.4382 uV  	 17	3.532e-02   
-3 	267.79 pA   	100.0	729.654 nV  	 29	4.802e-03   
-4 	357.969 fA  	100.0	5.25116 nV  	 42	8.519e-04   
+0 	1.35205 mA  	100.0             
+1 	38.5824 uA  	100.0	2.01892 mV  	 19	9.438e-02   
+2 	5.86556 uA  	100.0	559.759 uV  	 23	4.791e-02   
+3 	21.0422 nA  	100.0	28.711 uV   	 34	1.874e-02   
+4 	37.3859 pA  	100.0	489.295 nV  	 50	2.759e-03   
 
-
-HB_NOISE HB4[1].HB4[5/11] <ECE382M:Testbench:schematic>
-
-    Noise Freq=40 MHz  NFssb=8.85 dB  NFdsb=6.10 dB  NFasb=5.51 dB  Conv Gain=-16.45 dB
-    Voltage Gain=19.01 dB  Current Gain=-51.48 dB  Power Gain=-16.24 dB
-    Noise Output=7.691e-09 V/Hz^(1/2)  Added Noise=7.077e-09 V/Hz^(1/2)
-    IFfreq=50e-03        50.00% 6/11
+    RFfreq=2.5           16.67% 6/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	80.271 uA   	100.0             
-1 	2.04197 uA  	100.0	46.1191 uV  	  8	8.640e-02   
-2 	61.4292 nA  	100.0	41.1612 uV  	 17	3.612e-02   
-3 	319.189 pA  	100.0	742.971 nV  	 29	4.816e-03   
-4 	182.485 fA  	100.0	5.26112 nV  	 42	7.980e-04   
+0 	1.32285 mA  	100.0             
+1 	46.2247 uA  	100.0	2.06463 mV  	 19	9.066e-02   
+2 	4.6305 uA   	100.0	474.964 uV  	 22	4.935e-02   
+3 	17.7611 nA  	100.0	29.6567 uV  	 38	8.128e-03   
+4 	31.6715 pA  	100.0	253.956 nV  	 50	3.195e-03   
 
-
-HB_NOISE HB4[1].HB4[6/11] <ECE382M:Testbench:schematic>
-
-    Noise Freq=50 MHz  NFssb=8.84 dB  NFdsb=6.14 dB  NFasb=5.54 dB  Conv Gain=-16.44 dB
-    Voltage Gain=19.01 dB  Current Gain=-51.47 dB  Power Gain=-16.23 dB
-    Noise Output=7.692e-09 V/Hz^(1/2)  Added Noise=7.077e-09 V/Hz^(1/2)
-    IFfreq=60e-03        60.00% 7/11
+    RFfreq=2.6           20.00% 7/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	80.6825 uA  	100.0             
-1 	2.02234 uA  	100.0	46.0101 uV  	  8	8.577e-02   
-2 	70.5173 nA  	100.0	40.8756 uV  	 17	3.698e-02   
-3 	331.269 pA  	100.0	755.151 nV  	 29	4.485e-03   
-4 	70.8376 fA  	100.0	4.69309 nV  	 42	8.120e-04   
+0 	1.29664 mA  	100.0             
+1 	50.9648 uA  	100.0	2.09115 mV  	 19	8.498e-02   
+2 	2.22752 uA  	100.0	392.416 uV  	 21	4.979e-02   
+3 	11.5923 nA  	100.0	25.7132 uV  	 41	4.697e-03   
+4 	8.1159 pA   	100.0	162.902 nV  	 50	4.175e-03   
 
-
-HB_NOISE HB4[1].HB4[7/11] <ECE382M:Testbench:schematic>
-
-    Noise Freq=60 MHz  NFssb=8.82 dB  NFdsb=6.19 dB  NFasb=5.57 dB  Conv Gain=-16.44 dB
-    Voltage Gain=19.02 dB  Current Gain=-51.47 dB  Power Gain=-16.22 dB
-    Noise Output=7.692e-09 V/Hz^(1/2)  Added Noise=7.076e-09 V/Hz^(1/2)
-    IFfreq=70e-03        70.00% 8/11
+    RFfreq=2.7           23.33% 8/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	81.0989 uA  	100.0             
-1 	2.00172 uA  	100.0	45.8976 uV  	  8	8.515e-02   
-2 	80.6105 nA  	100.0	40.5789 uV  	 17	3.746e-02   
-3 	786.159 pA  	100.0	759.536 nV  	 28	4.332e-03   
-4 	241.453 fA  	100.0	4.54492 nV  	 42	9.138e-04   
+0 	1.27233 mA  	100.0             
+1 	52.7861 uA  	100.0	2.10601 mV  	 19	7.829e-02   
+2 	710.404 nA  	100.0	342.817 uV  	 21	4.615e-02   
+3 	4.12501 nA  	100.0	21.6098 uV  	 39	4.890e-03   
+4 	7.31976 pA  	100.0	109.289 nV  	 50	4.114e-03   
 
-
-HB_NOISE HB4[1].HB4[8/11] <ECE382M:Testbench:schematic>
-
-    Noise Freq=70 MHz  NFssb=8.80 dB  NFdsb=6.23 dB  NFasb=5.60 dB  Conv Gain=-16.43 dB
-    Voltage Gain=19.02 dB  Current Gain=-51.46 dB  Power Gain=-16.22 dB
-    Noise Output=7.693e-09 V/Hz^(1/2)  Added Noise=7.076e-09 V/Hz^(1/2)
-    IFfreq=80e-03        80.00% 9/11
+    RFfreq=2.8           26.67% 9/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	81.5201 uA  	100.0             
-1 	1.97873 uA  	100.0	45.7814 uV  	  8	8.452e-02   
-2 	90.4019 nA  	100.0	40.2761 uV  	 17	3.860e-02   
-3 	590.757 pA  	100.0	771.718 nV  	 28	4.078e-03   
-4 	148.991 fA  	100.0	4.25847 nV  	 43	8.719e-04   
+0 	1.24768 mA  	100.0             
+1 	52.3873 uA  	100.0	2.19857 mV  	 19	7.114e-02   
+2 	575.399 nA  	100.0	309.667 uV  	 21	4.322e-02   
+3 	15.1519 nA  	100.0	23.6209 uV  	 38	4.667e-03   
+4 	8.50178 pA  	100.0	119.706 nV  	 50	4.230e-03   
 
-
-HB_NOISE HB4[1].HB4[9/11] <ECE382M:Testbench:schematic>
-
-    Noise Freq=80 MHz  NFssb=8.78 dB  NFdsb=6.27 dB  NFasb=5.63 dB  Conv Gain=-16.42 dB
-    Voltage Gain=19.03 dB  Current Gain=-51.45 dB  Power Gain=-16.21 dB
-    Noise Output=7.694e-09 V/Hz^(1/2)  Added Noise=7.077e-09 V/Hz^(1/2)
-    IFfreq=90e-03        90.00% 10/11
+    RFfreq=2.9           30.00% 10/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	81.9464 uA  	100.0             
-1 	1.95391 uA  	100.0	45.6798 uV  	  8	8.390e-02   
-2 	100.831 nA  	100.0	39.9635 uV  	 17	3.969e-02   
-3 	384.171 pA  	100.0	783.187 nV  	 28	3.982e-03   
-4 	263.011 fA  	100.0	4.17802 nV  	 43	9.096e-04   
+0 	1.22078 mA  	100.0             
+1 	24.2822 uA  	100.0	2.16556 mV  	 18	9.658e-02   
+2 	1.98356 uA  	100.0	528.362 uV  	 22	4.971e-02   
+3 	5.81978 nA  	100.0	35.9837 uV  	 40	5.930e-03   
+4 	34.1621 pA  	100.0	197.09 nV   	 50	2.909e-03   
 
-
-HB_NOISE HB4[1].HB4[10/11] <ECE382M:Testbench:schematic>
-
-    Noise Freq=90 MHz  NFssb=8.77 dB  NFdsb=6.32 dB  NFasb=5.66 dB  Conv Gain=-16.42 dB
-    Voltage Gain=19.04 dB  Current Gain=-51.45 dB  Power Gain=-16.21 dB
-    Noise Output=7.695e-09 V/Hz^(1/2)  Added Noise=7.077e-09 V/Hz^(1/2)
-    IFfreq=100e-03      100.00% 11/11
+    RFfreq=3             33.33% 11/31
 ------------------------------------------------------------------------------
 Newton solver:					Linear solver:
 Iter	KCL residual	Damp %	Sol update	Iters	Residual
 ------------------------------------------------------------------------------
-0 	82.3778 uA  	100.0             
-1 	1.92723 uA  	100.0	45.7008 uV  	  8	8.327e-02   
-2 	111.785 nA  	100.0	39.6416 uV  	 17	4.089e-02   
-3 	267.623 pA  	100.0	794.43 nV   	 28	4.125e-03   
-4 	296.499 fA  	100.0	4.33043 nV  	 43	8.806e-04   
+0 	1.18967 mA  	100.0             
+1 	28.0273 uA  	100.0	2.2067 mV   	 18	9.060e-02   
+2 	1.26567 uA  	100.0	461.622 uV  	 22	4.680e-02   
+3 	1.4337 nA   	100.0	34.9513 uV  	 42	4.675e-03   
+4 	6.10774 pA  	100.0	156.404 nV  	 50	2.455e-03   
 
+    RFfreq=3.1           36.67% 12/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	1.15317 mA  	100.0             
+1 	30.9765 uA  	100.0	2.2512 mV   	 18	8.382e-02   
+2 	1.08784 uA  	100.0	398.628 uV  	 21	4.993e-02   
+3 	6.0006 nA   	100.0	36.15 uV    	 43	4.905e-03   
+4 	18.7018 pA  	100.0	143.226 nV  	 50	1.764e-03   
 
-HB_NOISE HB4[1].HB4[11/11] <ECE382M:Testbench:schematic>
+    RFfreq=3.2           40.00% 13/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	1.11077 mA  	100.0             
+1 	31.9437 uA  	100.0	2.28891 mV  	 18	7.678e-02   
+2 	1.18763 uA  	100.0	384.69 uV   	 21	4.683e-02   
+3 	3.83722 nA  	100.0	34.0727 uV  	 42	4.909e-03   
+4 	13.4474 pA  	100.0	107.108 nV  	 50	1.967e-03   
 
-    Noise Freq=100 MHz  NFssb=8.75 dB  NFdsb=6.36 dB  NFasb=5.69 dB  Conv Gain=-16.41 dB
-    Voltage Gain=19.04 dB  Current Gain=-51.44 dB  Power Gain=-16.20 dB
-    Noise Output=7.697e-09 V/Hz^(1/2)  Added Noise=7.078e-09 V/Hz^(1/2)
+    RFfreq=3.3           43.33% 14/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	1.06251 mA  	100.0             
+1 	30.1887 uA  	100.0	2.29961 mV  	 18	7.015e-02   
+2 	1.00847 uA  	100.0	364.441 uV  	 21	4.576e-02   
+3 	3.0479 nA   	100.0	33.0652 uV  	 41	4.393e-03   
+4 	9.6721 pA   	100.0	82.3158 nV  	 50	2.516e-03   
+
+    RFfreq=3.4           46.67% 15/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	1.00921 mA  	100.0             
+1 	25.1806 uA  	100.0	2.11965 mV  	 17	9.333e-02   
+2 	3.44307 uA  	100.0	544.45 uV   	 20	4.875e-02   
+3 	39.7196 nA  	100.0	33.727 uV   	 31	1.601e-02   
+4 	44.8138 pA  	100.0	672.134 nV  	 50	1.361e-03   
+
+    RFfreq=3.5           50.00% 16/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	952.293 uA  	100.0             
+1 	21.365 uA   	100.0	2.02898 mV  	 17	8.610e-02   
+2 	3.52396 uA  	100.0	495.615 uV  	 19	4.862e-02   
+3 	29.7739 nA  	100.0	28.787 uV   	 27	2.182e-02   
+4 	23.9337 pA  	100.0	697.125 nV  	 50	1.367e-03   
+
+    RFfreq=3.6           53.33% 17/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	937.031 uA  	100.0             
+1 	32.8524 uA  	100.0	1.89348 mV  	 16	9.622e-02   
+2 	3.69832 uA  	100.0	549.305 uV  	 19	4.840e-02   
+3 	9.96432 nA  	100.0	26.3365 uV  	 31	9.480e-03   
+4 	26.5891 pA  	100.0	345.827 nV  	 50	1.194e-03   
+
+    RFfreq=3.7           56.67% 18/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	933.69 uA   	100.0             
+1 	30.0527 uA  	100.0	1.84215 mV  	 16	8.802e-02   
+2 	2.89311 uA  	100.0	461.176 uV  	 19	4.364e-02   
+3 	6.40183 nA  	100.0	22.8205 uV  	 31	7.519e-03   
+4 	7.57165 pA  	100.0	236.052 nV  	 50	9.103e-04   
+
+    RFfreq=3.8           60.00% 19/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	924.052 uA  	100.0             
+1 	26.3224 uA  	100.0	1.81454 mV  	 16	7.982e-02   
+2 	2.2909 uA   	100.0	409.062 uV  	 19	4.036e-02   
+3 	4.31679 nA  	100.0	18.257 uV   	 31	5.558e-03   
+4 	3.50527 pA  	100.0	135.762 nV  	 50	9.380e-04   
+
+    RFfreq=3.9           63.33% 20/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	910.198 uA  	100.0             
+1 	75.9984 uA  	100.0	1.71373 mV  	 15	9.657e-02   
+2 	1.08598 uA  	100.0	489.3 uV    	 18	4.569e-02   
+3 	10.5942 nA  	100.0	18.0482 uV  	 30	4.200e-03   
+4 	1.75679 pA  	100.0	126.368 nV  	 49	9.038e-04   
+
+    RFfreq=4             66.67% 21/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	894.148 uA  	100.0             
+1 	76.1579 uA  	100.0	1.671 mV    	 15	8.974e-02   
+2 	895 nA      	100.0	428.869 uV  	 18	4.174e-02   
+3 	8.1691 nA   	100.0	17.3567 uV  	 29	4.118e-03   
+4 	2.1804 pA   	100.0	100.742 nV  	 48	9.230e-04   
+
+    RFfreq=4.1           70.00% 22/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	875.012 uA  	100.0             
+1 	61.7959 uA  	100.0	1.60309 mV  	 14	9.820e-02   
+2 	1.65094 uA  	100.0	448.019 uV  	 18	4.177e-02   
+3 	1.50075 nA  	100.0	19.8752 uV  	 30	4.155e-03   
+4 	2.40453 pA  	100.0	99.3268 nV  	 45	9.041e-04   
+
+    RFfreq=4.2           73.33% 23/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	854.019 uA  	100.0             
+1 	54.4659 uA  	100.0	1.56022 mV  	 14	9.202e-02   
+2 	405.669 nA  	100.0	394.292 uV  	 17	4.642e-02   
+3 	4.97904 nA  	100.0	19.5584 uV  	 30	4.327e-03   
+4 	1.69293 pA  	100.0	90.4298 nV  	 43	8.895e-04   
+
+    RFfreq=4.3           76.67% 24/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	831.609 uA  	100.0             
+1 	42.1368 uA  	100.0	1.50361 mV  	 14	8.665e-02   
+2 	450.596 nA  	100.0	355.458 uV  	 17	4.344e-02   
+3 	7.37444 nA  	100.0	18.8726 uV  	 31	4.319e-03   
+4 	4.39128 pA  	100.0	65.953 nV   	 40	9.676e-04   
+
+    RFfreq=4.4           80.00% 25/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	808.548 uA  	100.0             
+1 	28.7713 uA  	100.0	1.36 mV     	 13	9.611e-02   
+2 	2.89559 uA  	100.0	401.737 uV  	 18	4.110e-02   
+3 	14.8463 nA  	100.0	18.1406 uV  	 26	6.395e-03   
+4 	3.19581 pA  	100.0	150.535 nV  	 42	8.735e-04   
+
+    RFfreq=4.5           83.33% 26/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	785.411 uA  	100.0             
+1 	23.8411 uA  	100.0	1.31066 mV  	 13	9.002e-02   
+2 	394.629 nA  	100.0	354.163 uV  	 17	4.815e-02   
+3 	12.8319 nA  	100.0	17.3241 uV  	 31	4.196e-03   
+4 	3.81212 pA  	100.0	81.6568 nV  	 42	8.076e-04   
+
+    RFfreq=4.6           86.67% 27/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	762.556 uA  	100.0             
+1 	18.2575 uA  	100.0	1.23967 mV  	 12	9.847e-02   
+2 	733.941 nA  	100.0	383.711 uV  	 16	4.955e-02   
+3 	1.71452 nA  	100.0	19.1394 uV  	 29	4.588e-03   
+4 	6.84003 pA  	100.0	115.128 nV  	 40	9.262e-04   
+
+    RFfreq=4.7           90.00% 28/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	740.307 uA  	100.0             
+1 	14.3893 uA  	100.0	1.1968 mV   	 12	9.277e-02   
+2 	359.89 nA   	100.0	337.119 uV  	 16	4.593e-02   
+3 	14.2274 nA  	100.0	18.4078 uV  	 30	4.175e-03   
+4 	1.67544 pA  	100.0	97.3029 nV  	 39	1.185e-03   
+
+    RFfreq=4.8           93.33% 29/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	718.853 uA  	100.0             
+1 	11.3976 uA  	100.0	1.15334 mV  	 12	8.754e-02   
+2 	924.88 nA   	100.0	299.162 uV  	 15	4.925e-02   
+3 	8.92486 nA  	100.0	19.4622 uV  	 29	5.631e-03   
+4 	16.8684 pA  	100.0	105.587 nV  	 40	8.741e-04   
+
+    RFfreq=4.9           96.67% 30/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	698.427 uA  	100.0             
+1 	9.66189 uA  	100.0	1.10974 mV  	 12	8.284e-02   
+2 	662.496 nA  	100.0	266.763 uV  	 15	4.819e-02   
+3 	15.4047 nA  	100.0	18.3443 uV  	 30	4.006e-03   
+4 	1.33905 pA  	100.0	83.856 nV   	 38	9.623e-04   
+
+    RFfreq=5            100.00% 31/31
+------------------------------------------------------------------------------
+Newton solver:					Linear solver:
+Iter	KCL residual	Damp %	Sol update	Iters	Residual
+------------------------------------------------------------------------------
+0 	679.004 uA  	100.0             
+1 	89.3464 uA  	100.0	1.04321 mV  	 11	9.663e-02   
+2 	1.02637 uA  	100.0	285.713 uV  	 14	4.742e-02   
+3 	10.243 nA   	100.0	21.1108 uV  	 30	3.784e-03   
+4 	1.3737 pA   	100.0	88.6744 nV  	 39	7.784e-04   
+
 
 Resource usage:
-  Total stopwatch time     =     2.77 seconds.
+  Total stopwatch time     =     9.28 seconds.
 
